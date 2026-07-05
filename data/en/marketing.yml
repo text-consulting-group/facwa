@@ -33,11 +33,11 @@ carousel:
     - src: /img/R1-013_1.jpg
       alt: 'RG1 - 한국전쟁'
       caption: '포로, 수용소, 피난민, 학살, 일상'
-      url: "/items/"
+      url: "en/items/r1-한국전쟁/"
     - src: /img/R2-Scanned000016.jpg
       alt: 'RG2 - DMZ & 판문점'
       caption:
-      url: "/items/"
+      url: "en/items/r2-DMZ-판문점/"
     - src: /img/comfortwomen-02.JPG
       alt: "R3 일본군'위안부'"
       caption: '일본군 위안부 관련 증거 영상 발굴'
@@ -45,7 +45,7 @@ carousel:
     - src: https://img.youtube.com/vi/22amrq9YZ-A/sddefault.jpg
       alt: 'R4 빅 픽쳐'
       caption: 'The Big Picture'
-      url: "/items/"
+      url: "en/items/r4-빅-픽쳐/"
 
 ##################### hero-right/left ########################
 ############# basic / image-right / image-left ###############
