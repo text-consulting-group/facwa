@@ -47,35 +47,35 @@
         {{- with $item.caption }}
         <p class="facwa-ww-slide__description">{{ . }}</p>
         {{- end }}
-        <span class="facwa-ww-slide__button">자료 보기</span>
+        <span class="facwa-ww-slide__button">{{ i18n "viewMaterials" | default "자료 보기" }}</span>
       </div>
     </a>
     {{- end }}
   </div>
 
   <div class="facwa-ww-slide__controls" aria-hidden="false">
-    <button class="facwa-ww-slide__nav facwa-ww-slide__nav--prev" type="button" @click.prevent.stop="prev(); start()" aria-label="이전 슬라이드">
+    <button class="facwa-ww-slide__nav facwa-ww-slide__nav--prev" type="button" @click.prevent.stop="prev(); start()" aria-label="{{ i18n "prevSlide" | default "이전 슬라이드" }}">
       <svg viewBox="0 0 20 20" aria-hidden="true">
         <path fill="currentColor" fill-rule="evenodd" d="M12.707 5.293a1 1 0 0 1 0 1.414L9.414 10l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
       </svg>
-      <span>이전</span>
+      <span>{{ i18n "prevSlide" | default "이전" }}</span>
     </button>
-    <button class="facwa-ww-slide__nav facwa-ww-slide__nav--next" type="button" @click.prevent.stop="next(); start()" aria-label="다음 슬라이드">
-      <span>다음</span>
+    <button class="facwa-ww-slide__nav facwa-ww-slide__nav--next" type="button" @click.prevent.stop="next(); start()" aria-label="{{ i18n "nextSlide" | default "다음 슬라이드" }}">
+      <span>{{ i18n "nextSlide" | default "다음" }}</span>
       <svg viewBox="0 0 20 20" aria-hidden="true">
         <path fill="currentColor" fill-rule="evenodd" d="M7.293 14.707a1 1 0 0 1 0-1.414L10.586 10 7.293 6.707a1 1 0 0 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0z" clip-rule="evenodd"/>
       </svg>
     </button>
   </div>
 
-  <div class="facwa-ww-slide__pagination" aria-label="슬라이드 페이지">
+  <div class="facwa-ww-slide__pagination" aria-label="{{ i18n "slidePage" | default "슬라이드 페이지" }}">
     {{- range $index, $_ := $slides }}
     <button
       type="button"
       class="facwa-ww-slide__dot"
       :class="{ 'is-active': current === {{ $index }} }"
       @click="go({{ $index }}); start()"
-      aria-label="{{ add $index 1 }}번 슬라이드"
+      aria-label="{{ i18n "slideNumber" (add $index 1) | default (printf "%d번 슬라이드" (add $index 1)) }}"
     ></button>
     {{- end }}
   </div>

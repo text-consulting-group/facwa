@@ -66,3 +66,41 @@
   translation: "Open page"
 - id: venues_item_placeholder
   translation: "Image coming soon"
+- id: viewMaterials
+  translation: "View Materials"
+- id: prevSlide
+  translation: "Previous"
+- id: nextSlide
+  translation: "Next"
+- id: slidePage
+  translation: "Slide page"
+- id: slideNumber
+  translation: "Slide {{ . }}"
+- id: browseMaterials
+  translation: "Browse Materials"
+- id: recordGroups
+  translation: "Record Groups"
+- id: rgDescription
+  translation: "The Peace Worlding Film Archives collection is organized into 4 Record Groups."
+- id: koreanWar
+  translation: "Korean War"
+- id: rg1Desc
+  translation: "Video record group related to the Korean War."
+- id: panmunjom
+  translation: "Panmunjom"
+- id: rg2Desc
+  translation: "Video record group related to the DMZ and Panmunjom."
+- id: comfortWomen
+  translation: "Japanese Military Comfort Women"
+- id: rg3Desc
+  translation: "Video record group related to Japanese military comfort women."
+- id: bigPicture
+  translation: "The Big Picture"
+- id: rg4Desc
+  translation: "Video record group related to The Big Picture."
+- id: collection
+  translation: "Collection"
+- id: byLocation
+  translation: "By Location"
+- id: tagsDescription
+  translation: "This records the regions, place names, and organizations where items were created. Based on the production location, you can understand the regional context of each material and see that many materials were created at key locations. The currently published materials include the Tongyeong and Geoje areas related to prisoners, as well as the Paju and Munsan areas related to the DMZ."
