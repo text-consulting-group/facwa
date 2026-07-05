@@ -21,6 +21,17 @@
     limit: Number(el.dataset.facetLimit || 10),
   }));
   const jsonURL = root.dataset.searchJson || "/search/index.json";
+  const locale = root.dataset.locale || "ko";
+  const labelEmptyResults = root.dataset.labelEmptyResults || "검색 결과가 없습니다.";
+  const labelResultsFound = root.dataset.labelResultsFound || "개 결과를 찾았습니다.";
+  const labelSearching = root.dataset.labelSearching || "검색 중입니다.";
+  const labelIndexError = root.dataset.labelIndexError || "검색 인덱스를 불러오지 못했습니다.";
+  const labelFilterEmpty = root.dataset.labelFilterEmpty || "선택할 필터가 없습니다.";
+  const labelClearQuery = root.dataset.labelClearQuery || "검색어 지우기";
+  const labelClearFilter = root.dataset.labelClearFilter || "필터 지우기";
+  const labelCategory = root.dataset.labelCategory || "카테고리";
+  const labelNoDescription = root.dataset.labelNoDescription || "설명 정보가 없습니다.";
+  const labelUndated = root.dataset.labelUndated || "연도 정보 없음";
   const pageSize = 12;
 
   let page = 1;
@@ -90,13 +101,13 @@
     const metadata = item.metadata || item;
     const components = metadata.components || metadata.thumbnail || metadata.image || [];
     const image = Array.isArray(components) ? components[0] : components;
-    const category = metadata.level__rg || metadata.category || metadata.sources || metadata.subjects || "카테고리";
+    const category = metadata.level__rg || metadata.category || metadata.sources || metadata.subjects || labelCategory;
 
     return {
       title: metadata.title || item.title || "제목 없음",
       description: metadata.description || metadata.snippet || metadata.contents || item.text || "",
       permalink: metadata.permalink || metadata.url || metadata.path || "#",
-      category: textValue(category) || "카테고리",
+      category: textValue(category) || labelCategory,
       date: metadata.date || metadata.created_at || "",
       image,
       score: item.score || 0,
@@ -117,7 +128,7 @@
     const chips = [];
     if (query) {
       chips.push(`
-        <button type="button" class="facwa-filter-chip" data-chip-type="query" aria-label="${escapeHTML(query)} 검색어 지우기">
+        <button type="button" class="facwa-filter-chip" data-chip-type="query" aria-label="${escapeHTML(query)} ${escapeHTML(labelClearQuery)}">
           <span>${escapeHTML(query)}</span>
           <i aria-hidden="true">×</i>
         </button>
@@ -125,7 +136,7 @@
     }
     selectedEntries().slice(0, 16).forEach(({ key, value }) => {
       chips.push(`
-        <button type="button" class="facwa-filter-chip" data-chip-type="facet" data-facet-key="${escapeHTML(key)}" data-facet-value="${escapeHTML(value)}" aria-label="${escapeHTML(value)} 필터 지우기">
+        <button type="button" class="facwa-filter-chip" data-chip-type="facet" data-facet-key="${escapeHTML(key)}" data-facet-value="${escapeHTML(value)}" aria-label="${escapeHTML(value)} ${escapeHTML(labelClearFilter)}">
           <span>${escapeHTML(value)}</span>
           <i aria-hidden="true">×</i>
         </button>
@@ -199,7 +210,7 @@
       const counts = countFacetValues(scoredItems, key);
       const selected = selectedFacets.get(key) || new Set();
       const options = Array.from(counts.entries())
-        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ko"))
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], locale))
         .slice(0, limit);
 
       selected.forEach((value) => {
@@ -207,7 +218,7 @@
       });
 
       if (!options.length) {
-        el.innerHTML = `<h2>${label}</h2><p class="facwa-filter-empty">선택할 필터가 없습니다.</p>`;
+        el.innerHTML = `<h2>${label}</h2><p class="facwa-filter-empty">${labelFilterEmpty}</p>`;
         return;
       }
 
@@ -236,12 +247,12 @@
     resultsEl.classList.toggle("is-list-view", viewMode === "list");
 
     if (!items.length) {
-      setStatus("검색 결과가 없습니다.");
+      setStatus(labelEmptyResults);
       paginationEl.innerHTML = "";
       return;
     }
 
-    setStatus(`${total || items.length}개 결과를 찾았습니다.`);
+    setStatus(`${total || items.length} ${labelResultsFound}`);
     const fragment = document.createDocumentFragment();
 
     items.forEach((item) => {
@@ -259,9 +270,9 @@
         link.href = result.permalink;
       });
       titleEl.textContent = result.title;
-      descriptionEl.textContent = result.description || "설명 정보가 없습니다.";
+      descriptionEl.textContent = result.description || labelNoDescription;
       categoryEl.textContent = result.category;
-      dateEl.textContent = result.date;
+      dateEl.textContent = result.date || labelUndated;
 
       if (result.image) {
         imageEl.src = result.image;
@@ -326,7 +337,7 @@
     const query = input.value.trim();
     collectSelectedFacets();
     renderChips(query);
-    setStatus("검색 중입니다.");
+    setStatus(labelSearching);
 
     try {
       const payload = await runLocalSearch(query);
@@ -334,7 +345,7 @@
       renderResults(payload.results, payload.total);
       renderPagination(payload.total);
     } catch (error) {
-      setStatus("검색 인덱스를 불러오지 못했습니다.");
+      setStatus(labelIndexError);
       resultsEl.innerHTML = "";
       paginationEl.innerHTML = "";
     }

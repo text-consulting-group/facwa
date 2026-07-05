@@ -6,7 +6,7 @@
 {{- end -}}
 {{- $logo := $ctx.Site.Params.logo -}}
 {{- $title := $ctx.Site.Title -}}
-<a class="facwa-header-logo" href="/" aria-label="{{ $title }}">
+<a class="facwa-header-logo" href="{{ "/" | relLangURL }}" aria-label="{{ $title }}">
   {{- if $logo -}}
     <img class="facwa-header-logo__image" src="{{ $logo | absURL }}" alt="{{ $title }}">
   {{- else -}}

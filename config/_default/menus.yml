@@ -4,45 +4,81 @@ main:
   - name: 성공회대학교 평화월딩연구소
     url:
     weight: -110
+    params:
+      label_ko: 성공회대학교 평화월딩연구소
+      label_en: Institute for Peace and Worlding Studies
   - name: 평화월딩연구소
     url: https://ipws.or.kr/
     weight: 1
     parent: 성공회대학교 평화월딩연구소
+    params:
+      label_ko: 평화월딩연구소
+      label_en: Institute for Peace and Worlding Studies
   - name: 동아시아연구소
     url: http://ieas21.or.kr/
     weight: 2
     parent: 성공회대학교 평화월딩연구소
+    params:
+      label_ko: 동아시아연구소
+      label_en: Institute for East Asian Studies
   - name: 영상 탐색
     url:
     weight: -90
+    params:
+      label_ko: 영상 탐색
+      label_en: Browse Films
   - name: 탐색
     url: /items
     weight: 1
     parent: 영상 탐색
+    params:
+      label_ko: 탐색
+      label_en: Browse
   - name: 검색
     url: /search
     weight: 2
     parent: 영상 탐색
+    params:
+      label_ko: 검색
+      label_en: Search
   - name: 컬렉션
     url:
     weight: -80
+    params:
+      label_ko: 컬렉션
+      label_en: Collections
   - name: 촬영자
     url: /creators/
     weight: 2
     parent: 컬렉션
+    params:
+      label_ko: 촬영자
+      label_en: Creators
   - name: 주제
     url: /subjects/
     weight: 3
     parent: 컬렉션
+    params:
+      label_ko: 주제
+      label_en: Subjects
   - name: 생산기관(부대명)
     url: /sources/
     weight: 4
     parent: 컬렉션
+    params:
+      label_ko: 생산기관(부대명)
+      label_en: Sources
   - name: 생산장소
     url: /venues/
     parent: 컬렉션
     weight: 5
+    params:
+      label_ko: 생산장소
+      label_en: Venues
 button:
 - name: 검색
   url: /search
   weight: -90
+  params:
+    label_ko: 검색
+    label_en: Search

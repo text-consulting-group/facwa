@@ -3,8 +3,32 @@ baseURL: https://facwa.kr
 
 locale: ko-kr
 defaultContentLanguage: ko
+defaultContentLanguageInSubdir: false
 hasCJKLanguage: true
 paginate: 16
+enableRobotsTXT: true
+
+languages:
+  ko:
+    disabled: false
+    label: 한국어
+    locale: ko-KR
+    title: 평화월딩영상아카이브
+    weight: 1
+    params:
+      languageLabel: KOR
+      searchLabel: 검색
+      browseLabel: 탐색
+  en:
+    disabled: false
+    label: English
+    locale: en-US
+    title: Peace Worlding Film Archives
+    weight: 2
+    params:
+      languageLabel: ENG
+      searchLabel: Search
+      browseLabel: Browse
 
 build:
   writeStats: true

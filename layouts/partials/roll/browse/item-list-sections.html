@@ -1,9 +1,10 @@
 {{ $childpages := union .Sections .Pages }}
 {{ $paginator := .Paginate $childpages 20 }}
+{{ $isEnglish := eq .Site.Language.Lang "en" }}
 
 <div class="overflow-hidden rounded-[8px] border border-[#eeeff2] bg-white">
   <div class="border-b border-[#eeeff2] px-5 py-4 text-sm font-medium text-slate-500 lg:px-6">
-    하위 목록
+    {{ if $isEnglish }}Child Records{{ else }}하위 목록{{ end }}
   </div>
 
   {{ if $paginator.Pages }}
@@ -48,7 +49,7 @@
       {{ end }}
     </div>
   {{ else }}
-    <div class="px-5 py-12 text-sm text-slate-500 lg:px-6">현재 포함된 자료가 없습니다.</div>
+    <div class="px-5 py-12 text-sm text-slate-500 lg:px-6">{{ if $isEnglish }}No records are currently included in this section.{{ else }}현재 포함된 자료가 없습니다.{{ end }}</div>
   {{ end }}
 
   <div class="border-t border-[#eeeff2] px-5 py-4 lg:px-6">

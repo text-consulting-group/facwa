@@ -4,6 +4,8 @@
 
 :root {
   --site-container-width: 1640px;
+  --facwa-header-offset: 108px;
+  --facwa-sticky-offset: calc(var(--facwa-header-offset) + 12px);
   --theme-primary: {{ .Site.Params.themeColor.primary | default "#245ae4" }};
   --theme-primary-dark: {{ .Site.Params.themeColor.primaryDark | default "#184aca" }};
   --theme-primary-soft: {{ .Site.Params.themeColor.primarySoft | default "#f0f4fd" }};
@@ -22,6 +24,7 @@
 html {
   overflow-y: scroll;
   scrollbar-gutter: stable;
+  scroll-padding-top: var(--facwa-sticky-offset);
 }
 
 .site-container {
@@ -94,6 +97,37 @@ html {
   border-color: var(--theme-border) !important;
   background: var(--theme-surface) !important;
   color: var(--theme-text) !important;
+}
+
+main,
+section[id],
+article[id],
+[id^="section-"] {
+  scroll-margin-top: var(--facwa-sticky-offset);
+}
+
+.facwa-site-header__topbar {
+  border-bottom: 1px solid color-mix(in srgb, var(--theme-border) 72%, white 28%);
+  background: color-mix(in srgb, var(--theme-surface-soft) 82%, white 18%);
+}
+
+.facwa-language-switcher__item {
+  color: var(--theme-text-muted);
+}
+
+.facwa-language-switcher__item:hover {
+  color: var(--theme-text);
+}
+
+.facwa-language-switcher__item--active {
+  background: var(--theme-primary-dark) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--theme-primary) 22%, transparent);
+}
+
+.facwa-language-switcher__item--active:hover {
+  background: var(--theme-primary-dark) !important;
+  color: #ffffff !important;
 }
 
 .facwa-nav-link {
@@ -447,6 +481,255 @@ html {
   color: var(--theme-primary);
   font-size: 13px;
   font-weight: 700;
+}
+
+.facwa-section__heading--venues {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.facwa-pill-list--terms {
+  justify-content: flex-start;
+}
+
+.facwa-pill--term {
+  background: var(--theme-surface-soft);
+}
+
+.facwa-venues-map-shell {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.92fr) minmax(0, 1.4fr);
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 28px;
+  border: 1px solid color-mix(in srgb, var(--theme-border) 84%, white 16%);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-primary-soft) 58%, white 42%) 0%, var(--theme-surface) 100%);
+  box-shadow: 0 24px 64px rgba(36, 90, 228, 0.1);
+}
+
+.facwa-venues-map-shell__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.facwa-venues-map-shell__label {
+  margin: 0;
+  color: var(--theme-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.facwa-venues-map-shell__title {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.facwa-venues-map-shell__description {
+  margin: 0;
+  color: var(--theme-text-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.facwa-venues-map-shell__panel {
+  min-width: 0;
+}
+
+.facwa-venues-map {
+  min-height: 420px;
+  border: 1px solid color-mix(in srgb, var(--theme-border) 78%, white 22%);
+  border-radius: 22px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--theme-primary-soft) 48%, #eaf0ff 52%);
+}
+
+.facwa-venues-map--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.facwa-venues-map--empty p {
+  max-width: 32ch;
+  margin: 0;
+  color: var(--theme-text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.facwa-taxonomy-breadcrumb {
+  margin-bottom: 18px;
+}
+
+.facwa-venue-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.facwa-venue-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--theme-border) 82%, white 18%);
+  border-radius: 18px;
+  background: var(--theme-surface);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(25, 26, 30, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.facwa-venue-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--theme-secondary);
+  box-shadow: 0 24px 56px rgba(36, 90, 228, 0.12);
+}
+
+.facwa-venue-card__media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: var(--theme-primary-soft);
+}
+
+.facwa-venue-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facwa-venue-card__placeholder {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.facwa-venue-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.facwa-venue-card__meta {
+  margin: 0;
+  color: var(--theme-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facwa-venue-card__title {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.facwa-venue-card__title a {
+  color: var(--theme-text);
+  text-decoration: none;
+}
+
+.facwa-venue-card__title a:hover {
+  color: var(--theme-primary-dark);
+}
+
+.facwa-venue-card__summary {
+  margin: 0;
+  color: var(--theme-text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.facwa-venue-card__footer {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+  color: var(--theme-text-subtle);
+  font-size: 13px;
+}
+
+.facwa-venue-card__footer a {
+  color: var(--theme-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.facwa-venue-card__footer a:hover {
+  color: var(--theme-primary-dark);
+}
+
+.leaflet-popup-content h3 {
+  margin: 0 0 6px;
+  color: #191a1e;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+  color: #505a6d;
+}
+
+.leaflet-popup-content a {
+  color: #245ae4;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .facwa-venue-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .facwa-venues-map-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .facwa-section__heading--venues {
+    align-items: center;
+    text-align: center;
+  }
+
+  .facwa-pill-list--terms {
+    justify-content: center;
+  }
+
+  .facwa-venues-map-shell {
+    padding: 22px;
+  }
+
+  .facwa-venues-map {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .facwa-venue-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facwa-venue-card__footer {
+    flex-direction: column;
+  }
 }
 
 .facwa-card-grid {
@@ -1272,7 +1555,7 @@ html {
 
 .facwa-search-sticky {
   position: sticky;
-  top: 92px;
+  top: var(--facwa-header-offset);
   z-index: 40;
   width: 100%;
   padding: 10px 0;
@@ -1353,7 +1636,7 @@ html {
 
 .facwa-search-filters {
   position: sticky;
-  top: 120px;
+  top: var(--facwa-sticky-offset);
   display: flex;
   flex-direction: column;
   gap: 44px;
@@ -1361,6 +1644,14 @@ html {
   background: var(--theme-surface);
   padding: 20px;
   min-height: 680px;
+}
+
+.facwa-page-sticky-sidebar {
+  position: sticky;
+  top: var(--facwa-sticky-offset);
+  align-self: start;
+  max-height: calc(100vh - var(--facwa-sticky-offset) - 20px);
+  overflow-y: auto;
 }
 
 .facwa-filter-head {
@@ -1799,6 +2090,371 @@ html {
   font-size: 14px;
 }
 
+.facwa-posts-shell {
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--theme-primary) 8%, transparent), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, color-mix(in srgb, var(--theme-background) 92%, white 8%) 100%);
+  padding: 24px 0 84px;
+}
+
+.facwa-posts-index {
+  width: min(1040px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+.facwa-posts-hero {
+  display: grid;
+  gap: 18px;
+  padding: 18px 0 28px;
+  border-bottom: 1px solid color-mix(in srgb, var(--theme-text) 10%, transparent);
+}
+
+.facwa-posts-kicker {
+  margin: 0;
+  color: var(--theme-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.facwa-posts-hero__body {
+  max-width: 72ch;
+}
+
+.facwa-posts-title {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: clamp(2.2rem, 5vw, 4.15rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.facwa-posts-lede {
+  margin: 18px 0 0;
+  color: var(--theme-text-muted);
+  font-size: clamp(1rem, 1.2vw, 1.14rem);
+  line-height: 1.85;
+}
+
+.facwa-posts-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.facwa-posts-meta__chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 14%, transparent);
+  background: var(--theme-primary-soft);
+  color: var(--theme-primary-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 0.85rem;
+}
+
+.facwa-posts-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.facwa-posts-item {
+  display: grid;
+  grid-template-columns: minmax(120px, 150px) minmax(0, 1fr);
+  gap: 24px;
+  border: 1px solid color-mix(in srgb, var(--theme-text) 8%, transparent);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), color-mix(in srgb, var(--theme-surface-soft) 88%, white 12%));
+  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.04);
+  padding: 24px 26px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.facwa-posts-item:hover {
+  border-color: color-mix(in srgb, var(--theme-primary) 24%, transparent);
+  box-shadow: 0 18px 38px color-mix(in srgb, var(--theme-primary) 10%, transparent);
+  transform: translateY(-2px);
+}
+
+.facwa-posts-item__rail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--theme-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.facwa-posts-item__date {
+  color: var(--theme-primary-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facwa-posts-item__author,
+.facwa-posts-item__category {
+  margin: 0;
+}
+
+.facwa-posts-item__content {
+  min-width: 0;
+}
+
+.facwa-posts-item__title {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.16;
+}
+
+.facwa-posts-item__title a {
+  color: var(--theme-text);
+  text-decoration: none;
+}
+
+.facwa-posts-item__title a:hover {
+  color: var(--theme-primary-dark);
+}
+
+.facwa-posts-item__summary {
+  margin: 12px 0 0;
+  color: var(--theme-text-subtle);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.facwa-posts-item__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 16px;
+}
+
+.facwa-posts-item__link {
+  color: var(--theme-primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.facwa-posts-item__link:hover {
+  text-decoration: underline;
+}
+
+.facwa-posts-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.facwa-posts-item__tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 12%, transparent);
+  background: var(--theme-primary-soft);
+  color: var(--theme-primary-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.facwa-posts-item__tag:hover {
+  border-color: color-mix(in srgb, var(--theme-primary) 24%, transparent);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--theme-primary);
+  transform: translateY(-1px);
+}
+
+.facwa-posts-empty {
+  margin-top: 28px;
+  border: 1px solid color-mix(in srgb, var(--theme-text) 8%, transparent);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 28px;
+}
+
+.facwa-posts-empty__title {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.facwa-posts-empty__body {
+  margin: 10px 0 0;
+  color: var(--theme-text-muted);
+  line-height: 1.8;
+}
+
+.facwa-blog-shell {
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--theme-primary) 8%, transparent), transparent 28%),
+    linear-gradient(180deg, var(--theme-surface) 0%, var(--theme-background) 100%);
+  padding: 32px 0 80px;
+}
+
+.facwa-blog-article {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+.facwa-blog-hero {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.88)),
+    var(--theme-surface);
+  border: 1px solid var(--theme-border);
+  border-radius: 32px;
+  box-shadow: 0 22px 50px rgba(17, 24, 39, 0.06);
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.facwa-blog-kicker {
+  margin: 0 0 14px;
+  color: var(--theme-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.facwa-blog-title {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: clamp(2.3rem, 4.6vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.facwa-blog-lede {
+  margin: 18px 0 0;
+  max-width: 72ch;
+  color: var(--theme-text-muted);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.85;
+}
+
+.facwa-blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.facwa-post-content {
+  margin-top: 24px;
+  border: 1px solid var(--theme-border);
+  border-radius: 30px;
+  background: var(--theme-surface);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.05);
+  padding: clamp(24px, 3vw, 40px);
+}
+
+.facwa-post-body {
+  color: var(--theme-text);
+  font-size: 18px;
+  line-height: 1.92;
+}
+
+.facwa-post-body h2,
+.facwa-post-body h3,
+.facwa-post-body h4 {
+  margin: 2.1em 0 0.7em;
+  color: var(--theme-text);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.facwa-post-body h2 {
+  font-size: 1.65rem;
+}
+
+.facwa-post-body h3 {
+  font-size: 1.3rem;
+}
+
+.facwa-post-body h4 {
+  font-size: 1.08rem;
+  color: var(--theme-primary-dark);
+}
+
+.facwa-post-body p {
+  margin: 0 0 1.05em;
+}
+
+.facwa-post-body ul,
+.facwa-post-body ol {
+  margin: 0 0 1.1em;
+  padding-left: 1.4em;
+}
+
+.facwa-post-body li {
+  margin: 0.45em 0;
+}
+
+.facwa-post-body blockquote {
+  margin: 1.4em 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--theme-primary);
+  background: var(--theme-primary-soft);
+  color: var(--theme-text-subtle);
+  border-radius: 0 18px 18px 0;
+}
+
+.facwa-post-body code {
+  border-radius: 6px;
+  background: var(--theme-primary-soft);
+  color: var(--theme-primary-dark);
+  font-size: 0.93em;
+  padding: 0.18em 0.38em;
+}
+
+.facwa-post-body a {
+  color: var(--theme-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.facwa-post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.facwa-post-aside {
+  margin-top: 24px;
+  border: 1px solid var(--theme-border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--theme-primary-soft), rgba(255, 255, 255, 0.84));
+  padding: 22px;
+}
+
+.facwa-post-aside__title {
+  margin: 0 0 10px;
+  color: var(--theme-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.facwa-post-aside__text {
+  margin: 0;
+  color: var(--theme-text-subtle);
+  line-height: 1.8;
+}
+
 .facwa-pagination {
   display: flex;
   gap: 24px;
@@ -1844,6 +2500,10 @@ html {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --facwa-header-offset: 96px;
+  }
+
   .facwa-inquiry-header {
     padding: 0 20px;
   }
@@ -1875,7 +2535,7 @@ html {
   }
 
   .facwa-search-sticky {
-    top: 86px;
+    top: var(--facwa-header-offset);
   }
 
   .facwa-search-hero__top {
@@ -1903,5 +2563,54 @@ html {
   .facwa-result-card__meta {
     width: auto;
     text-align: left;
+  }
+
+  .facwa-blog-shell {
+    padding: 20px 0 56px;
+  }
+
+  .facwa-blog-article,
+  .facwa-posts-index {
+    width: min(100vw - 20px, 1180px);
+  }
+
+  .facwa-blog-hero,
+  .facwa-post-content {
+    border-radius: 22px;
+  }
+
+  .facwa-post-body {
+    font-size: 16px;
+  }
+
+  .facwa-posts-shell {
+    padding: 18px 0 60px;
+  }
+
+  .facwa-posts-hero {
+    gap: 14px;
+    padding-bottom: 22px;
+  }
+
+  .facwa-posts-title {
+    font-size: clamp(2rem, 10vw, 3.35rem);
+  }
+
+  .facwa-posts-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 20px;
+    border-radius: 24px;
+  }
+
+  .facwa-posts-item__summary {
+    font-size: 0.98rem;
+    line-height: 1.82;
+  }
+}
+
+@media (max-width: 960px) {
+  .facwa-posts-item {
+    grid-template-columns: 1fr;
   }
 }

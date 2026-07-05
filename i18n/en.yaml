@@ -1,0 +1,68 @@
+- id: posts_index_kicker
+  translation: "Posts"
+- id: posts_index_count
+  translation: "{{ .Count }} posts"
+- id: posts_index_latest
+  translation: "Newest first"
+- id: posts_read_more
+  translation: "Continue reading"
+- id: posts_empty
+  translation: "No posts yet."
+- id: posts_empty_body
+  translation: "New posts will appear here in reverse chronological order."
+- id: terms_block_label
+  translation: "Keywords"
+- id: page_language_switcher_label
+  translation: "View multilingual translations"
+- id: documents_type_label
+  translation: "document"
+- id: documents_aside_title
+  translation: "Source and materials"
+- id: documents_file_label
+  translation: "Document file"
+- id: documents_attachment_label
+  translation: "Attachment"
+- id: documents_download_link
+  translation: "Link and download"
+- id: taxonomy_terms_eyebrow
+  translation: "Browse Taxonomies"
+- id: taxonomy_terms_intro
+  translation: "Explore related archive items by taxonomy cluster."
+- id: taxonomy_term_eyebrow
+  translation: "Taxonomy"
+- id: taxonomy_term_intro
+  translation: "Archive items connected to this selected taxonomy."
+- id: taxonomy_count_template
+  translation: "%d items"
+- id: items_empty_summary
+  translation: "A summary has not been added yet."
+- id: venues_terms_eyebrow
+  translation: "Venue Archive"
+- id: venues_terms_intro
+  translation: "Browse place-based records with a map-led overview of connected archive items."
+- id: venues_map_label
+  translation: "Venue map"
+- id: venues_terms_map_title
+  translation: "Venue taxonomy on the map"
+- id: venues_terms_map_intro
+  translation: "Only venues with mappable coordinates are shown first. Select a card to open the full venue page."
+- id: venues_terms_map_empty
+  translation: "There are not enough confirmed venue coordinates to draw the map yet."
+- id: venues_term_eyebrow
+  translation: "Venue Detail"
+- id: venues_term_intro
+  translation: "Archive items gathered around this venue."
+- id: venues_term_map_title_template
+  translation: "Map view for %s"
+- id: venues_term_count_template
+  translation: "%d related items"
+- id: venues_term_map_empty
+  translation: "This venue does not have a confirmed map coordinate yet."
+- id: venues_popup_count_prefix
+  translation: "Related items"
+- id: venues_popup_count_suffix
+  translation: ""
+- id: venues_open_page
+  translation: "Open page"
+- id: venues_item_placeholder
+  translation: "Image coming soon"

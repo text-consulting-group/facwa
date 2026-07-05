@@ -3,6 +3,7 @@
 {{ end }}
 {{ define "main" }}
 <!-- terms.html(다크모드 작업) 에 수정합니다. -->
+{{ $isEnglish := eq .Site.Language.Lang "en" }}
 <section class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full">
@@ -31,7 +32,7 @@
               {{ if .Params.Description }}
                 <p class="text-sm leading-relaxed">{{ .Params.Description }}</p>
               {{ else }}  
-                <p class="leading-relaxed text-blue-600 dark:text-blue-500">{{ printf "%d" $count }}개의 아이템 &#xb7; <a class="text-blue-600 dark:text-blue-500 underline" href="{{ .Permalink }}">더 보기</a></p>
+                <p class="leading-relaxed text-blue-600 dark:text-blue-500">{{ if $isEnglish }}{{ printf "%d items" $count }} &#xb7; <a class="text-blue-600 dark:text-blue-500 underline" href="{{ .Permalink }}">View more</a>{{ else }}{{ printf "%d" $count }}개의 아이템 &#xb7; <a class="text-blue-600 dark:text-blue-500 underline" href="{{ .Permalink }}">더 보기</a>{{ end }}</p>
               {{ end }} 
             </div>                    
           </div>

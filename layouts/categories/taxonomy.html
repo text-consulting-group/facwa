@@ -4,6 +4,7 @@
 
 {{ define "main" }}
 <!-- categories taxonmy.html 세부 (다크모드 작업) -->
+{{ $isEnglish := eq .Site.Language.Lang "en" }}
 <section class="text-gray-100 bg-blue-600 dark:text-gray-100 dark:bg-blue-500 body-font">
 	<div class="container px-5 py-24 mx-auto">
 		<div class="text-start w-full">
@@ -24,16 +25,16 @@ class="container px-5 py-24 mx-auto bg-gray-100 dark:bg-gray-900"
 >
 <ul class="flex border-b items-start">
 	<li @click="openTab = 1" :class="{ '-mb-px': openTab === 1 }" class="-mb-px mr-1">
-		<a :class="openTab === 1 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#meetings">학술회의</a>
+		<a :class="openTab === 1 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#meetings">{{ if $isEnglish }}Meetings{{ else }}학술회의{{ end }}</a>
 	</li>
 	<li @click="openTab = 2" :class="{ '-mb-px': openTab === 2 }" class="mr-1">
-		<a :class="openTab === 2 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#projects">사업</a>
+		<a :class="openTab === 2 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#projects">{{ if $isEnglish }}Projects{{ else }}사업{{ end }}</a>
 	</li>
 	<li @click="openTab = 3" :class="{ '-mb-px': openTab === 3 }" class="mr-1">
-		<a :class="openTab === 3 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#articles">논문</a>
+		<a :class="openTab === 3 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#articles">{{ if $isEnglish }}Articles{{ else }}논문{{ end }}</a>
 	</li>
 	<li @click="openTab = 4" :class="{ '-mb-px': openTab === 4 }" class="mr-1">
-		<a :class="openTab === 4 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#books">책</a>
+		<a :class="openTab === 4 ? activeClasses : inactiveClasses" class="bg-white dark:bg-gray-900 inline-block py-2 px-4 font-semibold" href="#books">{{ if $isEnglish }}Books{{ else }}책{{ end }}</a>
 	</li>    
 </ul>
 <div class="w-full pt-4">

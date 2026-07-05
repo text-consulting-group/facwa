@@ -3,6 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
+  {{ $isEnglish := eq .Site.Language.Lang "en" }}
   {{ $title := .Title }}
   {{ $description := .Params.description | default .Params.Description }}
   {{ $level := .Params.level_of_description | default .Params.Level_of_description }}
@@ -47,7 +48,7 @@
   <section class="bg-[#f1f2f3] text-slate-900">
     <div class="container px-4 pb-10 pt-5 lg:px-10">
       <div class="grid gap-6 md:grid-cols-[30%_minmax(0,70%)] md:items-start">
-        <aside class="md:sticky md:top-[80px] md:max-h-[calc(100vh-100px)] md:self-start md:overflow-y-auto">
+        <aside class="facwa-page-sticky-sidebar">
           {{ partial "roll/browse/aside-default.html" . }}
         </aside>
 
@@ -80,10 +81,10 @@
             <div class="flex items-center justify-between gap-4">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-600">Preview</p>
-                <h2 class="mt-2 text-xl font-semibold text-slate-900">{{ if $previewLink }}미디어{{ else if $components }}대표 컴포넌트{{ else }}미디어{{ end }}</h2>
+                <h2 class="mt-2 text-xl font-semibold text-slate-900">{{ if $previewLink }}{{ if $isEnglish }}Media{{ else }}미디어{{ end }}{{ else if $components }}{{ if $isEnglish }}Featured component{{ else }}대표 컴포넌트{{ end }}{{ else }}{{ if $isEnglish }}Media{{ else }}미디어{{ end }}{{ end }}</h2>
               </div>
               {{ with .Parent }}
-                <a href="{{ .Permalink }}" class="rounded-full border border-[#cacdd6] px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-600 hover:text-blue-600">목록으로</a>
+                <a href="{{ .Permalink }}" class="rounded-full border border-[#cacdd6] px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-600 hover:text-blue-600">{{ if $isEnglish }}Back to list{{ else }}목록으로{{ end }}</a>
               {{ end }}
             </div>
 
@@ -111,7 +112,7 @@
                   {{ end }}
                 </div>
               {{ else }}
-                <div class="flex aspect-video items-center justify-center bg-slate-100 text-sm text-slate-500">미디어가 없습니다</div>
+                <div class="flex aspect-video items-center justify-center bg-slate-100 text-sm text-slate-500">{{ if $isEnglish }}No media available{{ else }}미디어가 없습니다{{ end }}</div>
               {{ end }}
             </div>
 
@@ -125,7 +126,7 @@
           <aside class="space-y-4">
             <div class="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm">
               <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-600">Identity</p>
-              <h2 class="mt-2 text-xl font-semibold text-slate-900">기본 정보</h2>
+              <h2 class="mt-2 text-xl font-semibold text-slate-900">{{ if $isEnglish }}Basic information{{ else }}기본 정보{{ end }}</h2>
               <dl class="mt-4 divide-y divide-[#eeeff2] text-sm">
                 {{ if $refCode }}
                   <div class="py-3">
@@ -168,7 +169,7 @@
 
             <div class="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm">
               <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-600">Context</p>
-              <h2 class="mt-2 text-xl font-semibold text-slate-900">연관 정보</h2>
+              <h2 class="mt-2 text-xl font-semibold text-slate-900">{{ if $isEnglish }}Related context{{ else }}연관 정보{{ end }}</h2>
               <div class="mt-4 space-y-4 text-sm">
                 {{ partial "roll/browse/taxonomy-chip-list.html" (dict "page" . "taxonomy" "tags" "label" "Tags") }}
                 {{ partial "roll/browse/taxonomy-chip-list.html" (dict "page" . "taxonomy" "creators" "label" "Creators") }}
@@ -179,9 +180,9 @@
             </div>
           </aside>
 
-          <div class="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm">
             <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-600">Description</p>
-            <h2 class="mt-2 text-xl font-semibold text-slate-900">상세 정보</h2>
+            <h2 class="mt-2 text-xl font-semibold text-slate-900">{{ if $isEnglish }}Description{{ else }}상세 정보{{ end }}</h2>
             <dl class="mt-4 divide-y divide-[#eeeff2] text-sm">
               <div class="py-3">
                 <dt class="text-slate-500">Title</dt>

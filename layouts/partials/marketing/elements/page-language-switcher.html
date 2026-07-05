@@ -1,0 +1,29 @@
+{{ $page := .Page | default . }}
+{{ $languageNameMap := dict
+  "ko" "KOR"
+  "en" "ENG"
+}}
+{{ $languageLinks := slice }}
+{{ range site.Home.AllTranslations }}
+  {{ with where $page.AllTranslations "Lang" .Language.Lang }}
+    {{ with index . 0 }}
+      {{ $languageLinks = $languageLinks | append (dict
+        "label" (index $languageNameMap .Language.Lang | default (upper .Language.Lang))
+        "url" .RelPermalink
+        "isActive" (eq .Language.Lang $page.Lang)
+        "lang" .Language.Lang
+      ) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $languageLinks) 1 }}
+  <div class="{{ .class | default "mt-12 border-t border-black/10 pt-8" }}">
+    <div class="mb-4 facwa-posts-kicker text-left">
+      {{ T "page_language_switcher_label" }}
+    </div>
+    <div class="flex justify-start">
+      {{ partial "marketing/elements/language-switcher.html" (dict "languageLinks" $languageLinks) }}
+    </div>
+  </div>
+{{ end }}

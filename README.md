@@ -67,3 +67,8 @@ hugo v0.160.1+extended+withdeploy darwin/arm64
 
 ### 5.production 관련 수정
 버전 업데이트 발행 되는지 확인
+
+## 실서버 배포(pages)
+- 직접배포
+    - hugo --minify && npx wrangler pages deploy --project-name facwa --branch main
+    - 도메인 복구: Cloudflare Pages 프로젝트 `facwa`에 `facwa.kr`을 다시 연결 후 DNS(CNAME)가 SSL 발급 상태인지 확인

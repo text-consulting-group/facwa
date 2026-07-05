@@ -1,0 +1,20 @@
+{{ $languageLinks := .languageLinks | default (slice) }}
+<nav aria-label="Language switcher" class="facwa-language-switcher flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500">
+  {{ $count := 0 }}
+  {{ range $languageLinks }}
+    {{ if gt $count 0 }}
+      <span class="text-slate-300">/</span>
+    {{ end }}
+    <a
+      href="{{ .url }}"
+      class="facwa-language-switcher__item inline-flex min-w-11 items-center justify-center rounded-full px-3 py-1 leading-none transition-all duration-150 {{ if .isActive }}facwa-language-switcher__item--active bg-slate-900 text-white{{ else }}hover:bg-slate-100 hover:text-slate-900{{ end }}"
+      aria-label="{{ .label }}"
+      {{ if .isActive }}aria-current="page"{{ end }}
+      rel="alternate"
+      hreflang="{{ .lang }}"
+    >
+      {{ .label }}
+    </a>
+    {{ $count = add $count 1 }}
+  {{ end }}
+</nav>
