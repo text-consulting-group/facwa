@@ -17,9 +17,9 @@ user:
     director: "Director of Institute for Peace and Worlding Studies: Kang Seong-hyeon (HK Professor at Institute, Professor at Yeollim College)"
     headOfResearch: "Head of Research: Jeon Gap-saeng (Senior Researcher at Institute)"
     year: "2021"
-    url: https://ipws.or.kr/
+    url: "https://ipws.or.kr/"
     caption: Institute for Peace and Worlding Studies
-    youtube: https://www.youtube.com/playlist?list=PLCNJCqoVaS60YcZyApHq9vXsNEi859VLD
+    youtube: "https://www.youtube.com/playlist?list=PLCNJCqoVaS60YcZyApHq9vXsNEi859VLD"
     fb:
     tw:
     instagram:
@@ -59,13 +59,13 @@ hero:
   subtitle: Early YWCA Leaders
   content: |
     <Ideological-Psychological Warfare and Affect in Cold War Asia through Moving Images> Focusing on U.S. military footage of the Korean War and Cold War. Date - March 27, 2021 (Sat) 13:00-18:20
-  image: https://r2.ccwps.org/resize/comfortwomen-01.png
+  image: "https://r2.ccwps.org/resize/comfortwomen-01.png"
   # button
   button:
     buttonLeft:
       enable: true
       label: Watch Symposium Video
-      url: https://youtu.be/4mhSsF5HrwY
+      url: "https://youtu.be/4mhSsF5HrwY"
     buttonRight:
       enable: true
       label: Go to Symposium Page
@@ -84,100 +84,100 @@ card:
     - category: Part 1
       title: Im Jae-geun
       description: "(Combined) Blind Spots and Affect in the Destruction of Bridges and Railways: Focusing on Korean War Footage from Daejeon"
-      image: https://img.youtube.com/vi/KfEK6p824o0/sddefault.jpg
+      image: "https://img.youtube.com/vi/KfEK6p824o0/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-01
       author: Im Jae-geun
       creator: ADC 8207, ADC 8105, ADC 812, 1ADC 8373, ADC 8401 - RG111
-      url: https://www.youtube.com/embed/KfEK6p824o0
+      url: "https://www.youtube.com/embed/KfEK6p824o0"
     - category: Part 1
       title: Little Switch Operation, Korea (OPERATION LITTLE SWITCH, LITTLE SWAP, TRAIN ENROUTE TO MUNSAN-NI, KOREA)
       description: This footage shows the train from Busan through Daegu to Munsan station on April 24, 1953, during the wounded prisoner of war repatriation and the prisoner reception center at Freedom Village. Wounded prisoner of war exchange began on April 20, 1953, with daily departures from Busan through Daegu to Yeongdeungpo and Munsan stations. The footage shows wounded prisoner of war resting on the train and viewing the surrounding scenery. They stopped briefly at Daegu station before proceeding through Yeongdeungpo to Munsan. The footage shows the process from Munsan station to Daeseongdong Freedom Village and captures the important reception headquarters and surrounding facilities for prisoner exchange. It also shows wounded prisoner of war arriving at Busan port from Geoje Island and Jeju Island at the end. This footage is unedited.
-      image: https://img.youtube.com/vi/SK0CF9j-uSc/sddefault.jpg
+      image: "https://img.youtube.com/vi/SK0CF9j-uSc/sddefault.jpg"
       date: 1953.04.24
       identifier: ccwps-02
       author: Kim Il-hwan
       creator: RG 111-LC-32406, NARA
-      url: https://www.youtube.com/embed/SK0CF9j-uSc
+      url: "https://www.youtube.com/embed/SK0CF9j-uSc"
     - category: Part 1
       title: Little Switch, 5th ROK MASH, Munsan-ni, Korea
       description: This footage shows the process of wounded prisoner of war exchange at Panmunjom on April 24, 1953. Notably, this footage contains indoor interrogation and meal procedures of ROK soldiers repatriated to the South during the Little Switch operation.
-      image: https://img.youtube.com/vi/E_twoRhPk3M/sddefault.jpg
+      image: "https://img.youtube.com/vi/E_twoRhPk3M/sddefault.jpg"
       date: 1953.04.25
       identifier: ccwps-03
       author: Kim Il-hwan
       creator: RG 111-LC-32529, NARA
-      url: https://www.youtube.com/embed/E_twoRhPk3M
+      url: "https://www.youtube.com/embed/E_twoRhPk3M"
     - category: Part 1
       title: Big Switch, Munsan-ni and Panmunjom, Korea
       description: This footage shows the Big Switch operation on August 6, 1953.
-      image: https://img.youtube.com/vi/t9SoEBrc-Io/sddefault.jpg
+      image: "https://img.youtube.com/vi/t9SoEBrc-Io/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-04
       author: Kim Il-hwan
       creator: RG 111-LC-33737, NARA
-      url: https://www.youtube.com/embed/t9SoEBrc-Io
+      url: "https://www.youtube.com/embed/t9SoEBrc-Io"
     - category: Part 1
       title: Pohang, Korea, Operation Recovery (OPERATION RECOVERY (RELEASE OF NORTH KOREAN SOLDIERS WHO WERE TAKEN PRISONERS OF WAR BY THE SOUTH KOREAN ARMY), POHANG DONG, KOREA)
       description: This footage shows non-repatriated prisoner of war released from Panmunjom enlisting at the Pohang recruit training center on January 21, 1954.
-      image: https://img.youtube.com/vi/MXPOgefJSqE/sddefault.jpg
+      image: "https://img.youtube.com/vi/MXPOgefJSqE/sddefault.jpg"
       date: 2021.01.21 - 2021.01.23
       identifier: ccwps-05
       author: Kim Il-hwan
       creator: RG 1111-LC-34807, NARA
-      url: https://www.youtube.com/embed/MXPOgefJSqE
+      url: "https://www.youtube.com/embed/MXPOgefJSqE"
     - category: Part 2
       title: Jeon Gap-saeng
       description: "(Combined) The U.S. Military's Capture of North Korean Footage and the Production of Psychological-Warfare Films: Focusing on The Big Lie and The Big Picture"
-      image: https://img.youtube.com/vi/lwC9uGzHgb4/sddefault.jpg
+      image: "https://img.youtube.com/vi/lwC9uGzHgb4/sddefault.jpg"
       date: 1951 - 1953
       identifier: ccwps-06
       author: Jeon Gap-saeng
       creator: RG 306-LSS-1627, RG 111-TV-255, RG 306-2781
-      url: https://www.youtube.com/embed/lwC9uGzHgb4
+      url: "https://www.youtube.com/embed/lwC9uGzHgb4"
     - category: category
       title: Kang Seong-hyeon 1
       description: How Should Korean War Footage Be Studied?
-      image: https://img.youtube.com/vi/7nYimlOROoE/sddefault.jpg
+      image: "https://img.youtube.com/vi/7nYimlOROoE/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-07
       author: Kang Seong-hyeon
       creator: 111-ADC-8082, NARA
-      url: https://www.youtube.com/embed/7nYimlOROoE
+      url: "https://www.youtube.com/embed/7nYimlOROoE"
     - category: category
       title: Kang Seong-hyeon 2
       description: How Should Korean War Footage Be Studied?
-      image: https://img.youtube.com/vi/zVsYPsGNDho/sddefault.jpg
+      image: "https://img.youtube.com/vi/zVsYPsGNDho/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-08
       author: Kang Seong-hyeon
       creator: 111-ADC-8517, NARA
-      url: https://www.youtube.com/embed/zVsYPsGNDho
+      url: "https://www.youtube.com/embed/zVsYPsGNDho"
     - category: category
       title: Kang Seong-hyeon 3
       description: How Should Korean War Footage Be Studied?
-      image: https://img.youtube.com/vi/kxy8DDZyLT4/sddefault.jpg
+      image: "https://img.youtube.com/vi/kxy8DDZyLT4/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-09
       author: Kang Seong-hyeon
       creator: 111-LC-29589, NARA
-      url: https://www.youtube.com/embed/kxy8DDZyLT4
+      url: "https://www.youtube.com/embed/kxy8DDZyLT4"
     - category: Part 2
       title: Jeong Young-sin
       description: "Reconstructing the Postwar Subject in U.S. Aid Films: Focusing on Aid-to-Korea Films in The Big Picture Series"
-      image: https://img.youtube.com/vi/mmH1yYhYhis/sddefault.jpg
+      image: "https://img.youtube.com/vi/mmH1yYhYhis/sddefault.jpg"
       date: 2021.03.27
       identifier: ccwps-10
       author: Jeong Young-sin
       creator: Combined, NARA
-      url: https://www.youtube.com/embed/mmH1yYhYhis
+      url: "https://www.youtube.com/embed/mmH1yYhYhis"
 
 ############################ faqs ##########################
 faq:
   title: Frequently Asked Questions
   enable: true
   content: Here are answers to frequently asked questions. Find the information you need.
-  url: https://facwa.kr
+  url: "https://facwa.kr"
   listItem:
     - question: What is the purpose of the Institute for Peace and Worlding Studies?
       answer: The Institute for Peace and Worlding Studies contributes to academic advancement through research, education, and other activities related to materials on wars and the Cold War in East Asia and Korea, peace, damages from Japanese colonial rule, and the issue of Japanese military "comfort women." (Institute Regulations Article 2, Section 3)
@@ -243,7 +243,7 @@ cta:
   enable: true
   category: Institute for Peace and Worlding Studies Center Achievements
   title: Projects, Research, Policy Development, Symposia, and Education
-  content: (Ongoing) Comprehensive Conservation Plan for the Chubong-do and Yongho-do POW Camps, 2021 [Tongyeong City] / (Completed) Participation in documentation of modern buildings in Tongyeong, 2017-2018 / Provided basic data for selection of 10 national registered cultural assets and "Revitalization of Modern Historical and Cultural Spaces" project (50 billion won over 5 years) by Cultural Heritage Administration until 2019 / 2018: Participated in documentation of Seohodong Soy Sauce Factory in Tongyeong and cooperation for national registered cultural asset registration / 2019: Investigation and collection of Korean War POW camp video and photo content, collection and production of video and photo content of Yongho and Chubong-do POW camps in Tongyeong
+  content: "(Ongoing) Comprehensive Conservation Plan for the Chubong-do and Yongho-do POW Camps, 2021 [Tongyeong City] / (Completed) Participation in documentation of modern buildings in Tongyeong, 2017-2018 / Provided basic data for selection of 10 national registered cultural assets and "Revitalization of Modern Historical and Cultural Spaces" project (50 billion won over 5 years) by Cultural Heritage Administration until 2019 / 2018: Participated in documentation of Seohodong Soy Sauce Factory in Tongyeong and cooperation for national registered cultural asset registration / 2019: Investigation and collection of Korean War POW camp video and photo content, collection and production of video and photo content of Yongho and Chubong-do POW camps in Tongyeong"
   listItem:
     - title: 1. Research and Investigation
       body: Research on modern buildings in Tongyeong / Documentation of Seohodong Soy Sauce Factory / Investigation and declassification of overseas materials in Paju DMZ and border areas
@@ -257,7 +257,7 @@ cta:
   button:
     enable: true
     label: Learn About the Institute
-    url: http://ieas21.or.kr/%ec%97%b0%ea%b5%ac%ec%86%8c-%ec%86%8c%ea%b0%9c/%eb%83%89%ec%a0%84%ed%8f%89%ed%99%94%ec%97%b0%ea%b5%ac%ec%84%bc%ed%84%b0/
+    url: "http://ieas21.or.kr/%ec%97%b0%ea%b5%ac%ec%86%8c-%ec%86%8c%ea%b0%9c/%eb%83%89%ec%a0%84%ed%8f%89%ed%99%94%ec%97%b0%ea%b5%ac%ec%84%bc%ed%84%b0/"
 
 ############################ feature-projects ##########################
 featureProjects:
@@ -271,23 +271,23 @@ featureProjects:
       topMargin: content-start
       title: RG-01
       description: News & Updates
-      image: https://r2.ccwps.org/resize/R1-007.jpg
+      image: "https://r2.ccwps.org/resize/R1-007.jpg"
       buttonLabel: View News & Updates
-      buttonUrl: https://ywca.or.kr/activity/100th/?tab=news
+      buttonUrl: "https://ywca.or.kr/activity/100th/?tab=news"
     - category: Link
       topMargin: content-end
       title: RG-02
       description: Related Materials
-      image: https://r2.ccwps.org/resize/R1-007.jpg
+      image: "https://r2.ccwps.org/resize/R1-007.jpg"
       buttonLabel: View Related Materials
-      buttonUrl: https://ywca.or.kr/activity/100th/?tab=reference
+      buttonUrl: "https://ywca.or.kr/activity/100th/?tab=reference"
     - category: Link
       topMargin: content-end
       title: RG-03
       description: Related Materials
-      image: https://r2.ccwps.org/resize/R1-007.jpg
+      image: "https://r2.ccwps.org/resize/R1-007.jpg"
       buttonLabel: View Related Materials
-      buttonUrl: https://ywca.or.kr/activity/100th/?tab=reference
+      buttonUrl: "https://ywca.or.kr/activity/100th/?tab=reference"
 
 ##################### custom/feature-program ########################
 featureProgram:
@@ -298,8 +298,8 @@ featureProgram:
   bgImage:
   subtitle:
   content: (Ongoing) Comprehensive Conservation Plan for the Chubong-do and Yongho-do POW Camps, 2021 [Tongyeong City] / (Completed) 2
-  youtube: https://www.youtube.com/embed/kxtTh8vpTsY
-  image: https://img.youtube.com/vi/kxtTh8vpTsY/sddefault.jpg
+  youtube: "https://www.youtube.com/embed/kxtTh8vpTsY"
+  image: "https://img.youtube.com/vi/kxtTh8vpTsY/sddefault.jpg"
   # commemorative programs
   listTitle: 100th Anniversary Commemorative Programs
   listItem:
