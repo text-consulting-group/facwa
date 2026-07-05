@@ -31,21 +31,21 @@ carousel:
   bg: bg-gray-900
   listItem:
     - src: /img/R1-013_1.jpg
-      alt: 'RG1 - Korean War'
-      caption: 'Prisoners, camps, refugees, massacres, daily life'
-      url: "/items/r1-korean-war/"
+      alt: 'RG1 - 한국전쟁'
+      caption: '포로, 수용소, 피난민, 학살, 일상'
+      url: "/items/"
     - src: /img/R2-Scanned000016.jpg
-      alt: 'RG2 - DMZ & Panmunjom'
+      alt: 'RG2 - DMZ & 판문점'
       caption:
-      url: "/items/r2-dmz-panmunjom/s2-dmz-mdr/"
+      url: "/items/"
     - src: /img/comfortwomen-02.JPG
-      alt: 'R3 Japanese Military Comfort Women'
-      caption: 'Discovery of evidence footage related to Japanese military comfort women'
-      url: "/items/r3-japanese-military-comfort-women/"
+      alt: "R3 일본군'위안부'"
+      caption: '일본군 위안부 관련 증거 영상 발굴'
+      url: "/items/"
     - src: https://img.youtube.com/vi/22amrq9YZ-A/sddefault.jpg
-      alt: 'RG4 The Big Picture'
+      alt: 'R4 빅 픽쳐'
       caption: 'The Big Picture'
-      url: "/items/r4-the-big-picture/"
+      url: "/items/"
 
 ##################### hero-right/left ########################
 ############# basic / image-right / image-left ###############
@@ -243,7 +243,7 @@ cta:
   enable: true
   category: Institute for Peace and Worlding Studies Center Achievements
   title: Projects, Research, Policy Development, Symposia, and Education
-  content: "(Ongoing) Comprehensive Conservation Plan for the Chubong-do and Yongho-do POW Camps, 2021 [Tongyeong City] / (Completed) Participation in documentation of modern buildings in Tongyeong, 2017-2018 / Provided basic data for selection of 10 national registered cultural assets and "Revitalization of Modern Historical and Cultural Spaces" project (50 billion won over 5 years) by Cultural Heritage Administration until 2019 / 2018: Participated in documentation of Seohodong Soy Sauce Factory in Tongyeong and cooperation for national registered cultural asset registration / 2019: Investigation and collection of Korean War POW camp video and photo content, collection and production of video and photo content of Yongho and Chubong-do POW camps in Tongyeong"
+  content: "(Ongoing) Comprehensive Conservation Plan for the Chubong-do and Yongho-do POW Camps, 2021 [Tongyeong City] / (Completed) Participation in documentation of modern buildings in Tongyeong, 2017-2018 / Provided basic data for selection of 10 national registered cultural assets and \"Revitalization of Modern Historical and Cultural Spaces\" project (50 billion won over 5 years) by Cultural Heritage Administration until 2019 / 2018: Participated in documentation of Seohodong Soy Sauce Factory in Tongyeong and cooperation for national registered cultural asset registration / 2019: Investigation and collection of Korean War POW camp video and photo content, collection and production of video and photo content of Yongho and Chubong-do POW camps in Tongyeong"
   listItem:
     - title: 1. Research and Investigation
       body: Research on modern buildings in Tongyeong / Documentation of Seohodong Soy Sauce Factory / Investigation and declassification of overseas materials in Paju DMZ and border areas
