@@ -14,8 +14,8 @@ user:
     fax: 02-0000-0000
     address: B1F, Saechonheon, Sungkonghoe University, 320 Yeondong-ro, Guro-gu, Seoul 08359
     email: kangsh@skhu.ac.kr
-    director: Director of Institute for Peace and Worlding Studies: Kang Seong-hyeon (HK Professor at Institute, Professor at Yeollim College)
-    headOfResearch: Head of Research: Jeon Gap-saeng (Senior Researcher at Institute)
+    director: "Director of Institute for Peace and Worlding Studies: Kang Seong-hyeon (HK Professor at Institute, Professor at Yeollim College)"
+    headOfResearch: "Head of Research: Jeon Gap-saeng (Senior Researcher at Institute)"
     year: "2021"
     url: https://ipws.or.kr/
     caption: Institute for Peace and Worlding Studies
