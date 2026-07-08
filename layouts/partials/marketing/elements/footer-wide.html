@@ -30,7 +30,7 @@
   </div>
 
   <div class="site-container facwa-footer__bottom">
-    <p>© {{ .Site.Params.license.year_of_creation }} {{ .Site.Params.license.title_of_work }}</p>
+    <p>© {{ .Site.Params.license.year_of_creation }} {{ cond (eq .Site.Language.Lang "en") "Institute for Peace and Worlding Studies, Sungkonghoe University" .Site.Params.license.title_of_work }}</p>
     <p><a href="{{ .Site.Params.license.link_to_work }}" rel="noopener noreferrer" target="_blank">{{ .Site.Params.license.link_to_work }}</a></p>
     <p>Work With <a href="{{ .Site.Params.license.link_to_creator_profile }}" rel="noopener noreferrer" target="_blank">{{ .Site.Params.license.createor_of_work }}</a></p>
   </div>

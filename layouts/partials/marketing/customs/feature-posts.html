@@ -1,12 +1,12 @@
 <section class="text-gray-900 bg-gray-400 dark:text-gray-100 dark:bg-gray-800">
     <div class="container px-5 py-24 mx-auto">
       <div class="text-center mb-20">
-        <h1 class="sm:text-3xl text-4xl font-medium text-center mb-4">성과</h1>
-        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">평화월딩연구소는 동아시아역사연구 및 기록 발굴 등 사업, 연구, 정책개발, 학술회의 및 교육 영역에서 최선의 성과를 내고 있습니다.</p>
+        <h1 class="sm:text-3xl text-4xl font-medium text-center mb-4">{{ cond (eq .Site.Language.Lang "en") "Achievements" "성과" }}</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">{{ cond (eq .Site.Language.Lang "en") "The Institute for Peace and Worlding Studies strives to achieve the best results in the fields of East Asian historical research, record discovery, projects, research, policy development, symposia, and education." "평화월딩연구소는 동아시아역사연구 및 기록 발굴 등 사업, 연구, 정책개발, 학술회의 및 교육 영역에서 최선의 성과를 내고 있습니다." }}</p>
       </div>
       <div class="flex flex-wrap -m-4">
         <div class="p-4 px-16 lg:w-1/2 sm:w-1/2 w-full">
-          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">사업</h2>
+          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">{{ cond (eq .Site.Language.Lang "en") "Projects" "사업" }}</h2>
           <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
             {{ range .Site.Taxonomies.categories.projects }}
               <a href="{{ .Permalink }}" class="hover:underline">
@@ -20,7 +20,7 @@
           </nav>
         </div>
         <div class="p-4 px-16 lg:w-1/2 sm:w-1/2 w-full">
-          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">논문</h2>
+          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">{{ cond (eq .Site.Language.Lang "en") "Articles" "논문" }}</h2>
           <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
             {{ range .Site.Taxonomies.categories.articles }}
               <a href="{{ .Permalink }}" class="hover:underline">
@@ -34,7 +34,7 @@
           </nav>
         </div>
         <div class="p-4 px-16 lg:w-1/2 sm:w-1/2 w-full">
-          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">학술회의</h2>
+          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">{{ cond (eq .Site.Language.Lang "en") "Symposia" "학술회의" }}</h2>
           <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
             {{ range .Site.Taxonomies.categories.meetings }}
               <a href="{{ .Permalink }}" class="hover:underline">
@@ -48,7 +48,7 @@
           </nav>
         </div>
         <div class="p-4 px-16 g:w-1/2 sm:w-1/2 w-full">
-          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">책</h2>
+          <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left dark:text-blue-500">{{ cond (eq .Site.Language.Lang "en") "Books" "책" }}</h2>
           <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
             {{ range .Site.Taxonomies.categories.books }}
               <a href="{{ .Permalink }}" class="hover:underline">

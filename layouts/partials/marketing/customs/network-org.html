@@ -1,4 +1,5 @@
 <!-- 협력기관을 노출합니다.featured-org.html  -->
+{{- $isEn := eq .Site.Language.Lang "en" -}}
 <section class="text-gray-900 bg-gray-200 dark:text-gray-100 dark:bg-blue-500">
     <div class="container px-5 py-12 mx-auto">
       <div class="flex flex-wrap -m-4">
@@ -7,7 +8,7 @@
             <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-scale-down object-cover object-center mb-4" src="/img/NARA_logo.png">
             <div class="w-full">
               <h2 class="title-font font-medium text-lg">National Archives</h2>
-              <p class="mb-4">미국 국립문서기록관리청</p>
+              <p class="mb-4">{{ cond $isEn "U.S. National Archives and Records Administration" "미국 국립문서기록관리청" }}</p>
               <p class="mb-4 text-gray-700 underline"><a href="https://www.archives.gov" target="_blank">https://www.archives.gov</a></p>
             </div>
           </div>
@@ -17,7 +18,7 @@
             <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-scale-down object-cover object-center mb-4" src="/img/TNA_logo.png">
             <div class="w-full">
               <h2 class="title-font font-medium text-lg">The National Archives</h2>
-              <p class="mb-4">영국 국립 공문서관</p>
+              <p class="mb-4">{{ cond $isEn "The National Archives, United Kingdom" "영국 국립 공문서관" }}</p>
               <p class="mb-4 text-gray-700 underline"><a href="https://www.nationalarchives.gov.uk" target="_blank">https://www.nationalarchives.gov.uk</a></p>
             </div>
           </div>
@@ -27,7 +28,7 @@
             <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-scale-down object-cover object-center mb-4" src="/img/MTVA_logo.png">
             <div class="w-full">
               <h2 class="title-font font-medium text-lg">MTVA Archívum</h2>
-              <p class="mb-4">헝가리국립기록관</p>
+              <p class="mb-4">{{ cond $isEn "Hungarian National Archive" "헝가리국립기록관" }}</p>
               <p class="mb-4 text-gray-700 underline"><a href="https://archivum.mtva.hu" target="_blank">https://archivum.mtva.hu</a></p>
             </div>
           </div>
@@ -37,7 +38,7 @@
             <img alt="team" class="flex-shrink-0 bg-white rounded-lg w-full h-56 object-scale-down object-cover object-center mb-4" src="/img/Netherlands_logo.svg">
             <div class="w-full">
               <h2 class="title-font font-medium text-lg">National Archives of the Netherlands</h2>
-              <p class="mb-4">네덜란드 국립기록관</p>
+              <p class="mb-4">{{ cond $isEn "National Archives of the Netherlands" "네덜란드 국립기록관" }}</p>
               <p class="mb-4 text-gray-700 underline"><a href="https://www.nationaalarchief.nl/" target="_blank">https://www.nationaalarchief.nl</a></p>
             </div>
           </div>

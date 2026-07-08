@@ -1,4 +1,5 @@
-{{- $slides := hugo.Data.marketing.carousel.listItem -}}
+{{- $marketing := cond (eq .Site.Language.Lang "en") hugo.Data.en.marketing hugo.Data.marketing -}}
+{{- $slides := $marketing.carousel.listItem -}}
 {{- if gt (len $slides) 0 -}}
 <section
   class="facwa-ww-slide"

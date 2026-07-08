@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,8 @@
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
     {{- template "_internal/schema.html" . -}}
+    {{- partial "seo/hreflang.html" . -}}
+    {{- partial "seo/structured-data.html" . -}}
     {{- partial "google-fonts" .Site.Params -}}
     {{- block "headCss" . }}{{ end -}}
     {{- /* 1. 먼저 템플릿으로 실행하여 동적 변수 주입 */ -}}

@@ -1,6 +1,8 @@
 ---
 title: "리서치 가이드"
 description: "평화월딩영상아카이브의 큰 폴더, 시리즈, 장소와 생산기관 분류를 따라 자료를 찾도록 돕는 탐색 가이드입니다."
+layout: "document"
+translationKey: "research-guide"
 generated_from: "jydh/content/research-guide.md"
 last_synced_at: "2026-07-01T00:00:00+09:00"
 breadcrumb: "리서치 가이드"

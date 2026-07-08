@@ -31,21 +31,21 @@ carousel:
   bg: bg-gray-900
   listItem:
     - src: /img/R1-013_1.jpg
-      alt: 'RG1 - 한국전쟁'
-      caption: '포로, 수용소, 피난민, 학살, 일상'
-      url: "en/items/r1-한국전쟁/"
+      alt: 'RG1 - Korean War'
+      caption: 'Prisoners, Camps, Refugees, Massacres, Everyday Life'
+      url: "en/items/r1-korean-war/"
     - src: /img/R2-Scanned000016.jpg
-      alt: 'RG2 - DMZ & 판문점'
+      alt: 'RG2 - DMZ & Panmunjom'
       caption:
-      url: "en/items/r2-DMZ-판문점/"
+      url: "en/items/r2-dmz-panmunjom/"
     - src: /img/comfortwomen-02.JPG
-      alt: "R3 일본군'위안부'"
-      caption: '일본군 위안부 관련 증거 영상 발굴'
-      url: "/items/"
+      alt: "R3 Japanese Military Comfort Women"
+      caption: 'Discovery of evidence footage related to Japanese military comfort women'
+      url: "en/items/r3-comfort-women/"
     - src: https://img.youtube.com/vi/22amrq9YZ-A/sddefault.jpg
-      alt: 'R4 빅 픽쳐'
+      alt: 'R4 The Big Picture'
       caption: 'The Big Picture'
-      url: "en/items/r4-빅-픽쳐/"
+      url: "en/items/r4-the-big-picture/"
 
 ##################### hero-right/left ########################
 ############# basic / image-right / image-left ###############
@@ -227,7 +227,7 @@ twobox:
       image: img/R2-Scanned000016.jpg
       content: At NARA II, there are numerous photographs and moving images produced by military and civilian photographers on the themes of division, the Cold War, and war in Korea, North Korea, and Asia. The first record group covering combat, daily life, refugees, massacres, and prisoners will first release the prisoner series.
       urlLabel: View records on browse page
-      url: /items/r1-korean-war/
+      url: /en/items/r1-korean-war/
   secondBox:
     - title: Record Group 2
       subtitle: DMZ
@@ -236,7 +236,7 @@ twobox:
         Korean shotlists (video content descriptions) have been created for the collected footage.
         These are records of previously unseen footage of the Paju, Munsan area, and DMZ region before and after the Korean War.
       urlLabel: View records on browse page
-      url: /items/r2-dmz/
+      url: /en/items/r2-dmz-panmunjom/
 
 ####################### call to actions #####################
 cta:

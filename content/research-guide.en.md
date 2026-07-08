@@ -1,6 +1,8 @@
 ---
 title: "Research Guide"
 description: "A navigation guide for exploring the Peace Worlding Film Archives by record group, series, venues, and source organizations."
+layout: "document"
+translationKey: "research-guide"
 generated_from: "jydh/content/research-guide.md"
 last_synced_at: "2026-07-01T00:00:00+09:00"
 breadcrumb: "Research Guide"

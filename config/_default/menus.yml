@@ -21,22 +21,36 @@ main:
     params:
       label_ko: 동아시아연구소
       label_en: Institute for East Asian Studies
+  - name: 포스트
+    url: /posts/
+    weight: 3
+    parent: 성공회대학교 평화월딩연구소
+    params:
+      label_ko: 포스트
+      label_en: Posts
   - name: 영상 탐색
     url:
     weight: -90
     params:
       label_ko: 영상 탐색
       label_en: Browse Films
+  - name: 리서치 가이드
+    url: /research-guide/
+    weight: 1
+    parent: 영상 탐색
+    params:
+      label_ko: 리서치 가이드
+      label_en: Research Guide
   - name: 탐색
     url: /items
-    weight: 1
+    weight: 2
     parent: 영상 탐색
     params:
       label_ko: 탐색
       label_en: Browse
   - name: 검색
     url: /search
-    weight: 2
+    weight: 3
     parent: 영상 탐색
     params:
       label_ko: 검색

@@ -1,5 +1,25 @@
 # Work Log - facwa
 
+2026-07-07 - facwa 최신 변경분 배포 완료. 배포 전 `hugo --panicOnWarning --quiet` 빌드 통과 후 `wrangler pages deploy public --project-name facwa --branch main` 실행. Cloudflare Pages 배포 URL은 `https://ce567dbe.facwa.pages.dev`이며, 실서버 `https://facwa.kr/`, `https://facwa.kr/en/`, `https://facwa.kr/research-guide/`, `https://facwa.kr/en/research-guide/` 모두 `HTTP 200` 확인. 배포 미리보기 URL 및 캐시 우회 URL에서 최신 SEO description, `hreflang`, `WebSite`/`SiteNavigationElement`/`BreadcrumbList` JSON-LD 반영 확인. Owner requests 문서 `/Users/woonjjang/Google Drive/공유 드라이브/IPWS/수정요청사항.docx`에 배포 완료와 반영 범위를 기록했고, 수정 전 백업은 `/private/tmp/수정요청사항.before-facwa-deploy-20260707.docx`에 보관했다.
+
+2026-07-07 - Google 검색 결과에서 사이트 설명과 하위 메뉴 후보가 더 잘 잡히도록 SEO 구조를 보강했다. 홈 국문/영문 description을 검색 스니펫용 문장으로 확장했고, `baseof.html`에 `lang`, `hreflang`, JSON-LD 구조화 데이터를 추가했다. 구조화 데이터는 `WebSite`, `Organization`, facwa 내부 메뉴 기반 `SiteNavigationElement`, 페이지별 `BreadcrumbList`를 생성한다. 외부 메뉴 링크는 구조화 데이터에서 제외했고, 국문/영문 WebSite description이 언어별로 출력되는 것을 확인했다. `hugo --panicOnWarning --quiet` 및 clean destination 빌드 통과.
+
+2026-07-07 - `research-guide` 공개 페이지를 `https://jydh.org/research-guide/`와 같은 document 레이아웃으로 맞췄다. `content/research-guide.md`, `content/research-guide.en.md`에 `layout: "document"`와 `translationKey`를 지정하고, `layouts/_default/document.html` 및 `facwa-document-*` CSS를 추가해 jydh 방식의 breadcrumb, hero, meta, sticky toc, document card 구조로 생성되게 했다. `영상 탐색` 메뉴의 첫 번째 항목은 `리서치 가이드`/`Research Guide`로 유지했고, 한국어 `/research-guide/`, 영어 `/en/research-guide/` 생성과 영어 페이지 한글 잔재 0건을 확인했다. `hugo --panicOnWarning --quiet` 빌드 통과.
+
+2026-07-07 - 첫 번째 메뉴 `성공회대학교 평화월딩연구소`의 세 번째 항목으로 `포스트`를 추가했다. 영어 라벨은 `Posts`로 지정했고, `/posts/`가 언어별 메뉴에서 `/posts/`, `/en/posts/`로 생성되는 것을 확인했다. `hugo --panicOnWarning --cleanDestinationDir --quiet` 빌드 통과.
+
+2026-07-07 - 영어 메인 및 about 페이지 국문 잔재 제거. `banner--ww--slide`, `banner`, `feature-statistic`, `two-box`, `faqs`, `network-org`, `footer-wide`, `feature-rg` partial을 언어별 데이터/문구 분기로 정리했다. `hugo --panicOnWarning --cleanDestinationDir --quiet` 빌드 통과 확인. 생성된 `public/en/index.html`, `public/en/about/index.html`에서 한글 검색 결과 0건 확인.
+
+2026-07-07 - 영어 메인 `Browse Materials / Record Groups` 4개 대표 링크를 영어 record group URL로 연결했다. `R1 Korean War`, `R2 DMZ and Panmunjom`, `R3 Japanese Military "Comfort Women"`, `R4 The Big Picture`의 `_index.en.md`에 영어 `url`을 지정하고 메인 카드와 영어 carousel 링크를 `/en/items/r1-korean-war/`, `/en/items/r2-dmz-panmunjom/`, `/en/items/r3-comfort-women/`, `/en/items/r4-the-big-picture/`로 맞췄다. Hugo 빌드 통과 및 네 개 `public/en/items/.../index.html` 생성 확인.
+
+2026-07-07 - `en/posts`를 국문 posts 구조와 맞췄다. `content/posts/_index.md`, `content/posts/_index.en.md`를 추가해 국문/영문 posts 섹션 제목과 설명을 분리했고, 국문 post 11개와 영문 post 11개의 1:1 대응을 확인했다. `hugo --panicOnWarning --cleanDestinationDir --quiet` 빌드 통과, `public/en/posts`와 `content/posts/*.en.md` 한글 검색 0건 확인.
+
+2026-07-07 - facwa 배포 완료: `wrangler pages deploy public --project-name facwa --branch main` 실행. https://facwa.kr/ 200 OK 확인.
+
+2026-07-07 - 영문 페이지 한글 잔재 수정 완료. 수정 파일: (1) `data/en/marketing.yml` carousel 부분 alt/caption 번역 (2) `layouts/partials/marketing/customs/banner--sticky-top.html` "공지" → 다국어 분기 (3) `layouts/partials/marketing/customs/feature-posts.html` 제목/설명 다국어 분기 (4) `layouts/_default/inquiry.html` 전체 한글 텍스트 다국어 분기. Hugo 빌드 통과 확인.
+
+2026-07-07 - 정기업무 1~3 점검 완료. Owner requests에서 미해결 요청 2건 발견: (1) 영문 메인/소개 페이지 한글 잔재 수정 (2) 전체 영어 페이지 점검. @daam에게 items 번역 현황 전달 필요.
+
 2026-07-02
 - archivej 정기업무 2 재점검: `AGENTS.md` 기준 Target `/Users/woonjjang/Google Drive/공유 드라이브/IPWS/`, Items `/Users/woonjjang/ai/archivej/facwa/content/items`, Owner requests `/Users/woonjjang/Google Drive/공유 드라이브/IPWS/수정요청사항.md`가 모두 존재함을 다시 확인했다.
 - Owner requests 문서는 현재도 입력 안내 템플릿 상태이며, 이번 점검 시점 기준 구체적으로 남아 있는 미해결 요청은 없다.

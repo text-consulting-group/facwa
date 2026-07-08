@@ -1,66 +1,68 @@
 {{ define "header" }}
+{{ $isEnglish := eq .Site.Language.Lang "en" }}
 <header class="facwa-inquiry-header">
   {{ partial "marketing/elements/site-logo.html" . }}
   <nav class="facwa-inquiry-nav" aria-label="inquiry navigation">
-    <a href="/">홈</a>
-    <a class="is-active" href="/inquiry/">제품신청</a>
+    <a href="/">{{ if $isEnglish }}Home{{ else }}홈{{ end }}</a>
+    <a class="is-active" href="/inquiry/">{{ if $isEnglish }}Submit Request{{ else }}제품신청{{ end }}</a>
   </nav>
   <a class="facwa-inquiry-github" href="{{ .Site.Params.footer.github | default "https://github.com/team-durumi" }}">GITHUB</a>
 </header>
 {{ end }}
 
 {{ define "main" }}
+{{ $isEnglish := eq .Site.Language.Lang "en" }}
 <main class="facwa-inquiry-page">
   <form class="facwa-inquiry-shell" id="facwa-inquiry-form">
     <section class="facwa-inquiry-section">
-      <h1>제품신청</h1>
+      <h1>{{ if $isEnglish }}Submit Request{{ else }}제품신청{{ end }}</h1>
     </section>
 
     <section class="facwa-inquiry-section">
-      <h2>파일 업로드</h2>
-      <p>디지털 아카이브에서 사용하는 기본 파일을 드래그해서 드롭하세요. 목록이 조사된 엑셀 파일이나, CSV 파일을 업로드하셔도 됩니다.</p>
+      <h2>{{ if $isEnglish }}File Upload{{ else }}파일 업로드{{ end }}</h2>
+      <p>{{ if $isEnglish }}Drag and drop the base files used in the digital archive. You can also upload an Excel file or CSV file with a surveyed list.{{ else }}디지털 아카이브에서 사용하는 기본 파일을 드래그해서 드롭하세요. 목록이 조사된 엑셀 파일이나, CSV 파일을 업로드하셔도 됩니다.{{ end }}</p>
 
       <label class="facwa-upload-dropzone" id="facwa-upload-dropzone">
         <input id="facwa-upload-input" type="file" multiple>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3.75a5.25 5.25 0 0 0-5.16 4.32A5.25 5.25 0 0 0 7.5 18.5h2.25v-1.8H7.5a3.45 3.45 0 0 1-.26-6.89l1.07-.08.15-1.06a3.6 3.6 0 0 1 6.94-.86l.34.86.9.2a3.96 3.96 0 0 1-.86 7.83H14.25v1.8h1.53a5.76 5.76 0 0 0 1.03-11.42A5.4 5.4 0 0 0 12 3.75Zm0 6.25-3 3h2.1v6h1.8v-6H15l-3-3Z" fill="currentColor"/>
         </svg>
-        <span>드래그 해서 파일 가져다 놓으세요</span>
-        <em>또는</em>
-        <strong>파일 찾기</strong>
+        <span>{{ if $isEnglish }}Drag and drop files here{{ else }}드래그 해서 파일 가져다 놓으세요{{ end }}</span>
+        <em>{{ if $isEnglish }}or{{ else }}또는{{ end }}</em>
+        <strong>{{ if $isEnglish }}Browse files{{ else }}파일 찾기{{ end }}</strong>
       </label>
     </section>
 
     <section class="facwa-inquiry-section">
-      <h2>업로드 파일</h2>
+      <h2>{{ if $isEnglish }}Uploaded Files{{ else }}업로드 파일{{ end }}</h2>
       <div class="facwa-upload-list" id="facwa-upload-list"></div>
     </section>
 
-    <section class="facwa-inquiry-fields" aria-label="신청 정보">
+    <section class="facwa-inquiry-fields" aria-label="{{ if $isEnglish }}Request Information{{ else }}신청 정보{{ end }}">
       <label class="facwa-inquiry-field">
-        <span>제목</span>
-        <input type="text" name="title" placeholder="제목입력">
+        <span>{{ if $isEnglish }}Title{{ else }}제목{{ end }}</span>
+        <input type="text" name="title" placeholder="{{ if $isEnglish }}Enter title{{ else }}제목입력{{ end }}">
       </label>
       <label class="facwa-inquiry-field">
-        <span>기본경로 URL</span>
-        <input type="text" name="path" placeholder="영문 및 숫자만 사용가능합니다.">
+        <span>{{ if $isEnglish }}Base Path URL{{ else }}기본경로 URL{{ end }}</span>
+        <input type="text" name="path" placeholder="{{ if $isEnglish }}Only English letters and numbers are allowed.{{ else }}영문 및 숫자만 사용가능합니다.{{ end }}">
       </label>
       <label class="facwa-inquiry-field facwa-inquiry-field--textarea">
-        <span>설명</span>
-        <textarea name="description" rows="4" placeholder="사진에 대한 설명을 남겨주세요."></textarea>
+        <span>{{ if $isEnglish }}Description{{ else }}설명{{ end }}</span>
+        <textarea name="description" rows="4" placeholder="{{ if $isEnglish }}Please provide a description of the photo.{{ else }}사진에 대한 설명을 남겨주세요.{{ end }}"></textarea>
       </label>
       <label class="facwa-inquiry-field">
-        <span>태그</span>
-        <input id="facwa-tag-input" type="text" placeholder="# 태그를 입력해주세요">
+        <span>{{ if $isEnglish }}Tags{{ else }}태그{{ end }}</span>
+        <input id="facwa-tag-input" type="text" placeholder="{{ if $isEnglish }}# Enter tags{{ else }}# 태그를 입력해주세요{{ end }}">
       </label>
-      <div class="facwa-inquiry-tags" id="facwa-tag-list" aria-label="입력된 태그"></div>
+      <div class="facwa-inquiry-tags" id="facwa-tag-list" aria-label="{{ if $isEnglish }}Entered tags{{ else }}입력된 태그{{ end }}"></div>
     </section>
 
     <p class="facwa-inquiry-status" id="facwa-inquiry-status" role="status" aria-live="polite"></p>
 
     <div class="facwa-inquiry-actions">
-      <button class="facwa-inquiry-cancel" type="reset">취소</button>
-      <button class="facwa-inquiry-submit" type="submit">신청</button>
+      <button class="facwa-inquiry-cancel" type="reset">{{ if $isEnglish }}Cancel{{ else }}취소{{ end }}</button>
+      <button class="facwa-inquiry-submit" type="submit">{{ if $isEnglish }}Submit{{ else }}신청{{ end }}</button>
     </div>
   </form>
 </main>
