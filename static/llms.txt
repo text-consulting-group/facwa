@@ -1,0 +1,36 @@
+# 평화월딩영상아카이브
+> 한국전쟁, DMZ와 판문점, 일본군'위안부', The Big Picture 관련 영상 자료를 레코드 그룹과 시리즈 단위로 탐색할 수 있는 디지털 아카이브입니다.
+
+## About
+평화월딩영상아카이브(FACWA)는 성공회대학교 평화월딩연구소가 운영하는 디지털 영상 아카이브입니다. 한국전쟁, DMZ와 판문점, 일본군 '위안부', The Big Picture 관련 영상 자료를 레코드 그룹과 시리즈 단위로 체계적으로 정리하여 제공합니다.
+
+Website: https://facwa.kr
+
+## Main Sections
+
+### 탐색
+- [아카이브 자료](/items): 레코드 그룹별 영상 자료 탐색
+- [촬영자](/creators): 촬영자별 자료 탐색
+- [주제](/subjects): 주제별 자료 탐색
+- [생산기관](/sources): 부대명별 자료 탐색
+- [생산장소](/venues): 장소별 자료 탐색
+
+### 정보
+- [소개](/about): 프로젝트 소개
+- [리서치 가이드](/research-guide): 연구자를 위한 가이드
+- [포스트](/posts): 블로그 및 뉴스
+- [문의](/inquiry): 자료 접수 및 문의
+
+## Languages
+- Korean (default): /
+- English: /en/
+
+## Contact
+이메일: woonjjang@textconsulting.io
+운영기관: 성공회대학교 평화월딩연구소 (Institute for Peace and Worlding Studies)
+웹사이트: https://ipws.or.kr/
+
+## Technical Information
+- Built with Hugo
+- Hosted on Cloudflare Pages
+- Last updated: 2026-08-14
