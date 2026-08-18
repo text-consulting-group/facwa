@@ -66,7 +66,7 @@ hugo v0.160.1+extended+withdeploy darwin/arm64
 공지사항 관련 메뉴 삭제 (연구소로 이동)
 
 ### 5.production 관련 수정
-버전 업데이트 발행 되는지 확인
+깃허브 연결
 
 ## 실서버 배포(pages)
 - 직접배포

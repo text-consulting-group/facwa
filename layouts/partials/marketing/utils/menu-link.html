@@ -1,8 +1,0 @@
-{{- $url := .URL | default "" -}}
-{{- if eq $url "" -}}
-  {{- site.Home.RelPermalink -}}
-{{- else if or (hasPrefix $url "http://") (hasPrefix $url "https://") (hasPrefix $url "mailto:") (hasPrefix $url "#") -}}
-  {{- $url -}}
-{{- else -}}
-  {{- relLangURL $url -}}
-{{- end -}}

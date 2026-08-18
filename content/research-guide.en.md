@@ -43,9 +43,9 @@ Curated interpretation, exhibition-style storytelling, and thematic reading list
 
 The Peace Worlding Film Archives are divided into four large groups, `R1` through `R4`. Each record group contains one or more thematic series.
 
-- View all items: [All items]({{< relref "/items/_index.en.md" >}})
-- Record group example: [R1 Korean War]({{< relref "/items/R1 한국전쟁/_index.en.md" >}})
-- Series example: [R2 DMZ & Panmunjom / S1 Panmunjom]({{< relref "/items/R2 DMZ&판문점/S1 판문점/_index.en.md" >}})
+- View all items: [All items](/en/items/)
+- Record group example: [R1 Korean War](/en/items/r1-korean-war/)
+- Series example: [R2 DMZ & Panmunjom / S1 Panmunjom](/en/items/r2-dmz-panmunjom/s1-panmunjom/)
 - Browse taxonomies: [Venues](/en/venues/), [Sources](/en/sources/), [Subjects](/en/subjects/), [Creators](/en/creators/)
 
 ### Recommended Browsing Order
@@ -71,10 +71,10 @@ The Peace Worlding Film Archives are divided into four large groups, `R1` throug
 
 When the research scope is still broad, start from the record groups.
 
-- Korean War materials: [R1 Korean War]({{< relref "/items/R1 한국전쟁/_index.en.md" >}})
-- DMZ and Panmunjom materials: [R2 DMZ & Panmunjom]({{< relref "/items/R2 DMZ&판문점/_index.en.md" >}})
-- Comfort women and Asia-Pacific War materials: [R3 Comfort Women]({{< relref "/items/R3 일본군’위안부’/_index.en.md" >}})
-- Large-scale U.S. Army film collection: [R4 The Big Picture]({{< relref "/items/R4 빅 픽쳐/_index.en.md" >}})
+- Korean War materials: [R1 Korean War](/en/items/r1-korean-war/)
+- DMZ and Panmunjom materials: [R2 DMZ & Panmunjom](/en/items/r2-dmz-panmunjom/)
+- Comfort women and Asia-Pacific War materials: [R3 Comfort Women](/en/items/r3-comfort-women/)
+- Large-scale U.S. Army film collection: [R4 The Big Picture](/en/items/r4-the-big-picture/)
 
 ### Search by Venue
 
@@ -130,55 +130,55 @@ Because `facwa` mixes films, photographs, and record descriptions, it helps to w
 
 ### R1 Korean War
 
-- Direct link: [R1 Korean War]({{< relref "/items/R1 한국전쟁/_index.en.md" >}})
+- Direct link: [R1 Korean War](/en/items/r1-korean-war/)
 - Scale: 113 items
-- Main series: [S1 Prisoners & Camps]({{< relref "/items/R1 한국전쟁/S1 포로&수용소/_index.en.md" >}}), [S2 Refugees]({{< relref "/items/R1 한국전쟁/S2 피난민/_index.en.md" >}}), [S3 Massacre]({{< relref "/items/R1 한국전쟁/S3 학살/_index.en.md" >}}), [S4 Everyday Life]({{< relref "/items/R1 한국전쟁/S4 일상/_index.en.md" >}})
+- Main series: [S1 Prisoners & Camps](/en/items/r1-korean-war/s1-prisoners-camps/), [S2 Refugees](/en/items/r1-korean-war/s2-refugees/), [S3 Massacre](/en/items/r1-korean-war/s3-massacre/), [S4 Everyday Life](/en/items/r1-korean-war/s4-everyday-life/)
 - Summary: This group covers prisoner exchanges, POW camps, refugee movement, civilian massacre, and scenes of wartime everyday life. It is a strong entry point for reading the war beyond military operations alone.
 
 ### R2 DMZ & Panmunjom
 
-- Direct link: [R2 DMZ & Panmunjom]({{< relref "/items/R2 DMZ&판문점/_index.en.md" >}})
+- Direct link: [R2 DMZ & Panmunjom](/en/items/r2-dmz-panmunjom/)
 - Scale: 52 items
-- Main series: [S1 Panmunjom]({{< relref "/items/R2 DMZ&판문점/S1 판문점/_index.en.md" >}}), [S2 DMZ & MDR]({{< relref "/items/R2 DMZ&판문점/S2 DMZ&MDR/_index.en.md" >}})
+- Main series: [S1 Panmunjom](/en/items/r2-dmz-panmunjom/s1-panmunjom/), [S2 DMZ & MDR](/en/items/r2-dmz-panmunjom/s2-dmz-mdr/)
 - Summary: This group focuses on armistice talks, the Joint Security Area, DMZ patrols, monitoring activity, Neutral Nations Supervisory Commission meetings, and forward observation scenes. It is central for studying the visual politics of the Cold War border.
 
 ### R3 Comfort Women
 
-- Direct link: [R3 Comfort Women]({{< relref "/items/R3 일본군’위안부’/_index.en.md" >}})
+- Direct link: [R3 Comfort Women](/en/items/r3-comfort-women/)
 - Scale: 6 items
-- Main series: [S1 Comfort Women]({{< relref "/items/R3 일본군’위안부’/S1 일본군’위안부’/_index.en.md" >}}), [S2 Okinawa]({{< relref "/items/R3 일본군’위안부’/S2 오키나와/_index.en.md" >}}), [S3 Asia-Pacific War]({{< relref "/items/R3 일본군’위안부’/S3 아시아태평양전쟁/_index.en.md" >}})
+- Main series: [S1 Comfort Women](/en/items/r3-comfort-women/), [S2 Okinawa](/en/items/r3-comfort-women/), [S3 Asia-Pacific War](/en/items/r3-comfort-women/)
 - Summary: This small but important group includes evidentiary footage connected to Japanese military sexual slavery, along with bombing and wartime scenes from Okinawa and Kanoya. It is useful for connecting testimony, violence, and the closing stage of the Asia-Pacific War.
 
 ### R4 The Big Picture
 
-- Direct link: [R4 The Big Picture]({{< relref "/items/R4 빅 픽쳐/_index.en.md" >}})
+- Direct link: [R4 The Big Picture](/en/items/r4-the-big-picture/)
 - Scale: 704 items
-- Main series: [S1 The Big Picture]({{< relref "/items/R4 빅 픽쳐/S1 The Big Picture/_index.en.md" >}})
+- Main series: [S1 The Big Picture](/en/items/r4-the-big-picture/s1-the-big-picture/)
 - Summary: This is a large collection centered on the U.S. Army film series `The Big Picture`. It can be used not only for Korean War topics, but also for comparing how the U.S. military represented training, alliance systems, technology, and global strategy over time.
 
 ## 4. Read by Series
 
 ### Prisoners and Camp Systems
 
-- Suggested entry point: [R1 / S1 Prisoners & Camps]({{< relref "/items/R1 한국전쟁/S1 포로&수용소/_index.en.md" >}})
+- Suggested entry point: [R1 / S1 Prisoners & Camps](/en/items/r1-korean-war/s1-prisoners-camps/)
 - Focus: prisoner exchange, Geoje POW camp, Munsan transport, and Panmunjom negotiations
 - Reading tip: compare administrative records, exchange scenes, and camp daily life rather than treating them as the same type of evidence.
 
 ### Refugee Movement and Civilian Displacement
 
-- Suggested entry point: [R1 / S2 Refugees]({{< relref "/items/R1 한국전쟁/S2 피난민/_index.en.md" >}})
+- Suggested entry point: [R1 / S2 Refugees](/en/items/r1-korean-war/s2-refugees/)
 - Focus: repeated movement through Seoul, Munsan, Heungnam, and Pyongyang
 - Reading tip: venue pages are especially useful here because they reveal how military operations and civilian routes overlap.
 
 ### Armistice Lines and Monitoring Systems
 
-- Suggested entry point: [R2 / S1 Panmunjom]({{< relref "/items/R2 DMZ&판문점/S1 판문점/_index.en.md" >}}), [R2 / S2 DMZ & MDR]({{< relref "/items/R2 DMZ&판문점/S2 DMZ&MDR/_index.en.md" >}})
+- Suggested entry point: [R2 / S1 Panmunjom](/en/items/r2-dmz-panmunjom/s1-panmunjom/), [R2 / S2 DMZ & MDR](/en/items/r2-dmz-panmunjom/s2-dmz-mdr/)
 - Focus: Military Armistice Commission meetings, patrol scenes, observation posts, and Joint Security Area activity
 - Reading tip: read negotiation scenes together with patrol footage to understand how the border was institutionalized.
 
 ### Long-Term Comparison Through Military Film
 
-- Suggested entry point: [R4 / S1 The Big Picture]({{< relref "/items/R4 빅 픽쳐/S1 The Big Picture/_index.en.md" >}})
+- Suggested entry point: [R4 / S1 The Big Picture](/en/items/r4-the-big-picture/s1-the-big-picture/)
 - Focus: the scale is large, so it helps to narrow the set by region, war, technology, alliance, or training
 - Reading tip: begin with Korea-related keywords, then compare them to films from other regions in the same period to identify recurring patterns in U.S. military messaging.
 

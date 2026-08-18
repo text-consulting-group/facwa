@@ -1,5 +1,39 @@
 # Work Log - facwa
 
+## 2026-07-09 영문 페이지 한글 잔재 수정 (woonjjang)
+
+- **작업일시**: 2026-07-09 14:50 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `content/research-guide.en.md` 파일의 모든 한국어 relref 링크를 영문 URL로 변경
+- 변경된 링크:
+  - `/items/R1 한국전쟁/` → `/en/items/r1-korean-war/`
+  - `/items/R2 DMZ&판문점/` → `/en/items/r2-dmz-panmunjom/`
+  - `/items/R3 일본군'위안부'/` → `/en/items/r3-comfort-women/`
+  - `/items/R4 빅 픽쳐/` → `/en/items/r4-the-big-picture/`
+  - 시리즈 하위 링크도 동일하게 영문 URL로 변경
+
+### 결과
+- 영문 리서치 가이드에서 한국어 문자 0건 확인
+- Hugo 빌드 성공
+- Cloudflare Pages 배포 완료 (https://facwa.kr/en/research-guide/)
+
+---
+
+## 2026-07-09 daam 자료조사 점검
+
+- 점검 기준일시: 2026-07-09 09:49 KST
+- Target folder: `/Users/woonjjang/Google Drive/공유 드라이브/IPWS/` — Google Drive 미마운트 상태로 직접 확인 불가
+- Items folder (Hugo): `/Users/woonjjang/ai/archivej/facwa/content/items` — .md 파일 1,780개
+- Items 하위 분류: `R1 한국전쟁`, `R2 DMZ&판문점`, `R3 일본군'위안부'`, `R4 빅 픽쳐` (4개 record group)
+- dummy.md: 330줄 — 존재
+- dummy-jp.md: 없음 (영문만 운영)
+- work-log.md: 67줄 — 존재
+- context.md: 없음
+- Owner requests: `수정요청사항.docx` — 미해결 요청 없음 (안내 텍스트만)
+- 비고: items가 1,780개로 가장 많음. record group 4개 구조로 잘 정리되어 있음. 영어 번역 882개 이상 완료.
+
 2026-07-07 - facwa 최신 변경분 배포 완료. 배포 전 `hugo --panicOnWarning --quiet` 빌드 통과 후 `wrangler pages deploy public --project-name facwa --branch main` 실행. Cloudflare Pages 배포 URL은 `https://ce567dbe.facwa.pages.dev`이며, 실서버 `https://facwa.kr/`, `https://facwa.kr/en/`, `https://facwa.kr/research-guide/`, `https://facwa.kr/en/research-guide/` 모두 `HTTP 200` 확인. 배포 미리보기 URL 및 캐시 우회 URL에서 최신 SEO description, `hreflang`, `WebSite`/`SiteNavigationElement`/`BreadcrumbList` JSON-LD 반영 확인. Owner requests 문서 `/Users/woonjjang/Google Drive/공유 드라이브/IPWS/수정요청사항.docx`에 배포 완료와 반영 범위를 기록했고, 수정 전 백업은 `/private/tmp/수정요청사항.before-facwa-deploy-20260707.docx`에 보관했다.
 
 2026-07-07 - Google 검색 결과에서 사이트 설명과 하위 메뉴 후보가 더 잘 잡히도록 SEO 구조를 보강했다. 홈 국문/영문 description을 검색 스니펫용 문장으로 확장했고, `baseof.html`에 `lang`, `hreflang`, JSON-LD 구조화 데이터를 추가했다. 구조화 데이터는 `WebSite`, `Organization`, facwa 내부 메뉴 기반 `SiteNavigationElement`, 페이지별 `BreadcrumbList`를 생성한다. 외부 메뉴 링크는 구조화 데이터에서 제외했고, 국문/영문 WebSite description이 언어별로 출력되는 것을 확인했다. `hugo --panicOnWarning --quiet` 및 clean destination 빌드 통과.

@@ -5,6 +5,7 @@
 .gitignore
 hugo_stats.json
 /backup
+*.DS_Store
 
 # Local Netlify folder
 .netlify
