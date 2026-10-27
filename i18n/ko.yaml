@@ -1,0 +1,68 @@
+- id: posts_index_kicker
+  translation: "포스트"
+- id: posts_index_count
+  translation: "{{ .Count }}개의 글"
+- id: posts_index_latest
+  translation: "최신순 정렬"
+- id: posts_read_more
+  translation: "계속 읽기"
+- id: posts_empty
+  translation: "아직 포스트가 없습니다."
+- id: posts_empty_body
+  translation: "새 글이 올라오면 이곳에 순서대로 표시됩니다."
+- id: terms_block_label
+  translation: "키워드"
+- id: page_language_switcher_label
+  translation: "다국어 번역 보기"
+- id: documents_type_label
+  translation: "문서"
+- id: documents_aside_title
+  translation: "원문과 첨부 자료"
+- id: documents_file_label
+  translation: "문서 파일"
+- id: documents_attachment_label
+  translation: "첨부파일"
+- id: documents_download_link
+  translation: "링크 및 다운로드"
+- id: taxonomy_terms_eyebrow
+  translation: "분류 탐색"
+- id: taxonomy_terms_intro
+  translation: "주제별 묶음을 따라 관련 아이템을 탐색해보세요."
+- id: taxonomy_term_eyebrow
+  translation: "분류"
+- id: taxonomy_term_intro
+  translation: "선택한 분류에 연결된 아카이브 아이템입니다."
+- id: taxonomy_count_template
+  translation: "%d개"
+- id: items_empty_summary
+  translation: "설명이 아직 정리되지 않았습니다."
+- id: venues_terms_eyebrow
+  translation: "장소 아카이브"
+- id: venues_terms_intro
+  translation: "장소별로 흩어진 기록을 지도와 함께 살펴보며 관련 아이템을 탐색할 수 있습니다."
+- id: venues_map_label
+  translation: "Venue Map"
+- id: venues_terms_map_title
+  translation: "지도로 보는 장소 분류"
+- id: venues_terms_map_intro
+  translation: "좌표를 추정할 수 있는 장소만 먼저 지도에 표시합니다. 카드를 눌러 전체 분류 페이지로 이동할 수 있습니다."
+- id: venues_terms_map_empty
+  translation: "아직 지도에 표시할 수 있는 장소 좌표가 충분하지 않습니다."
+- id: venues_term_eyebrow
+  translation: "장소 상세"
+- id: venues_term_intro
+  translation: "이 장소와 연결된 아카이브 아이템을 모아보았습니다."
+- id: venues_term_map_title_template
+  translation: "%s 지역 맵"
+- id: venues_term_count_template
+  translation: "총 %d개의 관련 아이템"
+- id: venues_term_map_empty
+  translation: "이 장소는 아직 지도 좌표를 확정하지 못했습니다."
+- id: venues_popup_count_prefix
+  translation: "관련 아이템"
+- id: venues_popup_count_suffix
+  translation: "개"
+- id: venues_open_page
+  translation: "페이지 열기"
+- id: venues_item_placeholder
+  translation: "이미지 준비 중"

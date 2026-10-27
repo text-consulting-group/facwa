@@ -1,0 +1,147 @@
+{{ define "header" }}
+  {{ partial "marketing/elements/header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{ $isVenueTerm := eq .Data.Plural "venues" }}
+  {{ $isEnglish := eq .Site.Language.Lang "en" }}
+  {{ $venuePoint := partial "facwa/venue-point.html" (dict "title" .Title "count" (len .Pages) "url" .RelPermalink) }}
+  <section class="facwa-section">
+    <div class="facwa-section__inner">
+      <div class="facwa-section__heading facwa-section__heading--venues">
+        <p class="facwa-section__eyebrow">
+          {{ if $isVenueTerm }}{{ T "venues_term_eyebrow" }}{{ else }}{{ T "taxonomy_term_eyebrow" }}{{ end }}
+        </p>
+        <h1 class="facwa-section__title">{{ .Title }}</h1>
+        <p class="facwa-section__description">
+          {{ if $isVenueTerm }}
+            {{ with .Description }}{{ . }}{{ else }}{{ T "venues_term_intro" }}{{ end }}
+          {{ else }}
+            {{ with .Description }}{{ . }}{{ else }}{{ T "taxonomy_term_intro" }}{{ end }}
+          {{ end }}
+        </p>
+      </div>
+
+      {{ if $isVenueTerm }}
+        <section class="facwa-venues-map-shell facwa-venues-map-shell--term">
+          <div class="facwa-venues-map-shell__copy">
+            <p class="facwa-venues-map-shell__label">{{ T "venues_map_label" }}</p>
+            <h2 class="facwa-venues-map-shell__title">{{ if $isEnglish }}Map view for {{ .Title }}{{ else }}{{ .Title }} 지역 맵{{ end }}</h2>
+            <p class="facwa-venues-map-shell__description">
+              {{ if $venuePoint.valid }}{{ printf (T "venues_term_count_template") (len .Pages) }}{{ else }}{{ T "venues_term_map_empty" }}{{ end }}
+            </p>
+          </div>
+          <div class="facwa-venues-map-shell__panel">
+            {{ if $venuePoint.valid }}
+              <div id="facwa-venue-term-map" class="facwa-venues-map" aria-label="{{ T "venues_map_label" }}"></div>
+            {{ else }}
+              <div class="facwa-venues-map facwa-venues-map--empty">
+                <p>{{ T "venues_term_map_empty" }}</p>
+              </div>
+            {{ end }}
+          </div>
+        </section>
+        {{ .Scratch.Set "venueTermPoint" $venuePoint }}
+      {{ else }}
+        <div class="facwa-taxonomy-breadcrumb">
+          {{ partial "roll/browse/breadcrumb.html" . }}
+        </div>
+      {{ end }}
+
+      <div class="facwa-venue-card-grid">
+        {{ range .Pages.ByTitle }}
+          {{ $thumb := .Params.thumbnail }}
+          {{ $components := .Params.components | default .Params.Components }}
+          {{ if and (not $components) .Params.media }}
+            {{ with index .Params.media "components" }}{{ $components = . }}{{ end }}
+            {{ with index .Params.media "thumbnail" }}{{ $thumb = . }}{{ end }}
+          {{ end }}
+          {{ if and (not $thumb) $components }}
+            {{ $firstComponent := index $components 0 }}
+            {{ if reflect.IsMap $firstComponent }}
+              {{ with index $firstComponent "src" }}{{ $thumb = . }}{{ end }}
+            {{ else }}
+              {{ $thumb = $firstComponent }}
+            {{ end }}
+          {{ end }}
+          <article class="facwa-venue-card">
+            <a class="facwa-venue-card__media" href="{{ .RelPermalink }}">
+              {{ if $thumb }}
+                <img src="{{ $thumb | absURL }}" alt="{{ .Title }}">
+              {{ else }}
+                <div class="facwa-venue-card__placeholder">{{ T "venues_item_placeholder" }}</div>
+              {{ end }}
+            </a>
+            <div class="facwa-venue-card__body">
+              <p class="facwa-venue-card__meta">
+                {{ with .Params.media_type }}{{ . }}{{ else }}{{ T "documents_type_label" }}{{ end }}
+              </p>
+              <h2 class="facwa-venue-card__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h2>
+              <p class="facwa-venue-card__summary">
+                {{ with .Params.description }}{{ . }}{{ else }}{{ T "items_empty_summary" }}{{ end }}
+              </p>
+              <div class="facwa-venue-card__footer">
+                <span>{{ with .Params.local_identifier }}{{ . }}{{ else }}{{ .File.BaseFileName }}{{ end }}</span>
+                <a href="{{ .RelPermalink }}">{{ T "venues_open_page" }}</a>
+              </div>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+{{ define "footerJs" }}
+  {{ if and (eq .Data.Plural "venues") (.Scratch.Get "venueTermPoint") ((.Scratch.Get "venueTermPoint").valid) }}
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    >
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script>
+      (() => {
+        const run = () => {
+          const mapEl = document.getElementById("facwa-venue-term-map");
+          if (!mapEl || typeof L === "undefined") return;
+          const point = {{ .Scratch.Get "venueTermPoint" | jsonify | safeJS }};
+          if (!point || !point.valid) return;
+
+          const map = L.map(mapEl, {
+            scrollWheelZoom: false,
+          }).setView([point.lat, point.lng], 7);
+
+          L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+            maxZoom: 19
+          }).addTo(map);
+
+          L.circleMarker([point.lat, point.lng], {
+            radius: Math.max(10, Math.min(20, 8 + point.count / 5)),
+            fillColor: "#245ae4",
+            color: "#ffffff",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.9
+          }).addTo(map).bindPopup(
+            `<h3>${point.title}</h3><p>{{ T "venues_popup_count_prefix" }} ${point.count} {{ T "venues_popup_count_suffix" }}</p>`
+          ).openPopup();
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>
+  {{ end }}
+{{ end }}

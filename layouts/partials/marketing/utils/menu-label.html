@@ -1,0 +1,18 @@
+{{- $label := .Name -}}
+{{- $langKey := printf "label_%s" site.Language.Lang -}}
+{{- with .Params -}}
+  {{- with index . $langKey -}}
+    {{- $label = . -}}
+  {{- else -}}
+    {{- with .label -}}
+      {{- $label = . -}}
+    {{- else -}}
+      {{- if eq site.Language.Lang "ko" -}}
+        {{- with .label_ko -}}
+          {{- $label = . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $label -}}

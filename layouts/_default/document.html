@@ -1,0 +1,95 @@
+{{- define "header" }}
+  {{ partial "marketing/elements/header.html" . }}
+{{ end -}}
+
+{{- define "main" }}
+  {{- $isEnglish := eq .Site.Language.Lang "en" -}}
+  {{- $homeLabel := cond $isEnglish "Home" "홈" -}}
+  {{- $breadcrumb := .Params.breadcrumb | default (cond $isEnglish "Research Guide" "리서치 가이드") -}}
+  {{- $eyebrow := .Params.eyebrow | default "Research Guide" -}}
+  {{- $heroDescription := .Params.hero_description | default .Description -}}
+  <main class="facwa-document-page">
+    <div class="site-container facwa-document-shell">
+      <nav class="facwa-document-breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ site.Home.RelPermalink }}">{{ $homeLabel }}</a>
+        <span aria-hidden="true">/</span>
+        <span>{{ $breadcrumb }}</span>
+      </nav>
+
+      <section class="facwa-document-hero">
+        <div>
+          <p class="facwa-document-eyebrow">{{ $eyebrow }}</p>
+          <h1>{{ .Title }}</h1>
+          {{ with $heroDescription }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </div>
+        <dl class="facwa-document-meta">
+          {{- with .Params.meta }}
+            {{- range . }}
+              <div>
+                <dt>{{ .label }}</dt>
+                <dd>{{ .value }}</dd>
+              </div>
+            {{- end }}
+          {{- else }}
+            <div>
+              <dt>{{ if $isEnglish }}Format{{ else }}형식{{ end }}</dt>
+              <dd>{{ if $isEnglish }}Navigation guide{{ else }}탐색 가이드{{ end }}</dd>
+            </div>
+            <div>
+              <dt>{{ if $isEnglish }}Scope{{ else }}대상{{ end }}</dt>
+              <dd>{{ .Site.Title }}</dd>
+            </div>
+            <div>
+              <dt>{{ if $isEnglish }}Synced{{ else }}동기화{{ end }}</dt>
+              <dd>{{ .Params.last_synced_at | default .File.Path }}</dd>
+            </div>
+          {{- end }}
+        </dl>
+      </section>
+
+      <div class="facwa-document-grid">
+        <aside class="facwa-document-toc-card" aria-label="{{ if $isEnglish }}Document contents{{ else }}문서 목차{{ end }}">
+          <div class="facwa-document-toc-card__inner">
+            <p class="facwa-document-toc-title">{{ if $isEnglish }}Contents{{ else }}목차{{ end }}</p>
+            {{ with .TableOfContents }}
+              {{ . }}
+            {{ else }}
+              <p class="facwa-document-toc-empty">{{ if $isEnglish }}The table of contents is not available.{{ else }}목차를 생성할 수 없습니다.{{ end }}</p>
+            {{ end }}
+          </div>
+        </aside>
+
+        <article class="facwa-document-card">
+          <div class="facwa-document-content">
+            {{ .Content }}
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+{{ end -}}
+
+{{- define "footer" }}
+  {{ partial "marketing/elements/footer-wide.html" . }}
+{{ end -}}
+
+{{- define "footerJs" }}
+  <script>
+    document.addEventListener("click", function (event) {
+      const link = event.target.closest(".facwa-document-content a[href*='/items/']");
+      if (!link) return;
+
+      const title = link.textContent.trim() || "item page";
+      {{- if eq .Site.Language.Lang "en" }}
+      const shouldMove = window.confirm(`Open "${title}"?`);
+      {{- else }}
+      const shouldMove = window.confirm(`"${title}" 페이지로 이동할까요?`);
+      {{- end }}
+      if (!shouldMove) {
+        event.preventDefault();
+      }
+    });
+  </script>
+{{ end -}}
