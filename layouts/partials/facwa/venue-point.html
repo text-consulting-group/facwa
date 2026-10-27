@@ -4,12 +4,12 @@
 {{- $point := dict "title" $title "count" $count "url" $url "lat" 36.35 "lng" 127.38 "valid" false -}}
 {{- $invalidAliases := slice "Unknown" "unknown" "해당없음" "없음" "미상" -}}
 {{- $candidates := slice
-  (dict "aliases" (slice "서울" "Seoul") "lat" 37.5665 "lng" 126.9780)
-  (dict "aliases" (slice "파주" "Paju" "문산" "Munsan" "문산리" "Munsan-ri" "율곡리" "임진리" "임진나루" "자유의 다리" "판문점" "Panmunjom" "공동경비구역" "JSA" "Joint Security Area" "개성" "Kaesong" "대성동" "법원리" "금촌" "천현리") "lat" 37.8896 "lng" 126.7410)
-  (dict "aliases" (slice "의정부" "Uijeongbu" "동두천" "Dongducheon" "춘천" "Chuncheon" "강원" "Gangwon") "lat" 37.7381 "lng" 127.0337)
+  (dict "aliases" (slice "서울" "Seoul" "영등포" "Yeongdeungpo" "미 8군" "미8군" "U.S. 8th Army" "8th Army" "UN House" "유엔하우스") "lat" 37.5665 "lng" 126.9780)
+  (dict "aliases" (slice "파주" "Paju" "문산" "Munsan" "문산리" "Munsan-ri" "문산역" "Munsan Station" "문산읍" "Munsan-eup" "문산가도" "Munsan-gado" "율곡리" "Yulgok-ri" "임진리" "Imjin-ri" "임진나루" "Imjin Ferry" "임진강" "Imjin River" "자유의 다리" "Freedom Bridge" "자유의 다리(임진강철교)" "자유의 다리(임진강 철교)" "판문점" "Panmunjom" "판문점 인근" "Panmunjom Area" "공동경비구역" "JSA" "Joint Security Area" "개성" "Kaesong" "개성 내봉장" "Kaesong Naebongjang" "대성동" "Daeseongdong" "대성동 자유의 마을" "Freedom Village" "자유의 마을" "법원리" "Beomwon-ri" "법원읍" "Beomwon-eup" "용주골" "Yongjugol" "금촌" "Geumchon" "금촌민사병원" "Geumchon Civil Hospital" "천현리" "Cheonhyeon-ri" "천현면" "Cheonhyeon-myeon" "선유리" "Seonyu-ri" "Seonyuri" "군내면" "Gunnae-myeon" "장단" "Jangdan" "장단역" "Jangdan Station" "리비교" "Libby Bridge" "기러기 다리" "Honker Bridge" "PMP" "MDL" "777GP" "DVLL") "lat" 37.8896 "lng" 126.7410)
+  (dict "aliases" (slice "의정부" "Uijeongbu" "동두천" "Dongducheon" "춘천" "Chuncheon" "강원" "Gangwon" "원주" "Wonju") "lat" 37.7381 "lng" 127.0337)
   (dict "aliases" (slice "인천" "Incheon") "lat" 37.4563 "lng" 126.7052)
-  (dict "aliases" (slice "부산" "Busan") "lat" 35.1796 "lng" 129.0756)
-  (dict "aliases" (slice "거제도" "거제" "Geoje") "lat" 34.8806 "lng" 128.6210)
+  (dict "aliases" (slice "부산" "Busan" "부산UN 묘지" "Busan UN Cemetery" "부산으로 추정됨" "Presumed Busan" "Korea Busan") "lat" 35.1796 "lng" 129.0756)
+  (dict "aliases" (slice "거제도" "거제" "Geoje" "Geoje-do" "Geoje Island" "거제도 포로수용소" "Geoje Prisoner of War Camp" "거제도포로수용소" "65 포로구역" "65 Prisoners of War Area") "lat" 34.8806 "lng" 128.6210)
   (dict "aliases" (slice "순천" "Suncheon") "lat" 34.9506 "lng" 127.4872)
   (dict "aliases" (slice "평양" "Pyongyang") "lat" 39.0392 "lng" 125.7625)
   (dict "aliases" (slice "흥남" "Heungnam" "함흥" "Hamhung" "원산" "Wonsan") "lat" 39.9183 "lng" 127.5364)
@@ -18,10 +18,15 @@
   (dict "aliases" (slice "대전" "Daejeon") "lat" 36.3504 "lng" 127.3845)
   (dict "aliases" (slice "전주" "Jeonju") "lat" 35.8242 "lng" 127.1480)
   (dict "aliases" (slice "대구" "Daegu") "lat" 35.8714 "lng" 128.6014)
+  (dict "aliases" (slice "포항" "Pohang") "lat" 36.0190 "lng" 129.3435)
+  (dict "aliases" (slice "진주" "Jinju") "lat" 35.1800 "lng" 128.0836)
+  (dict "aliases" (slice "제주" "제주도" "Jeju" "Jeju Island" "RTC1 제주도" "RTC1 Jeju Island") "lat" 33.4996 "lng" 126.5312)
   (dict "aliases" (slice "오키나와" "Okinawa" "나하" "Naha") "lat" 26.2124 "lng" 127.6809)
   (dict "aliases" (slice "쑹산" "Songshan") "lat" 25.0503 "lng" 121.5770)
-  (dict "aliases" (slice "룽링" "Longling") "lat" 24.5870 "lng" 98.6930)
-  (dict "aliases" (slice "가노야" "Kanoya") "lat" 31.3783 "lng" 130.8520)
+  (dict "aliases" (slice "룽링" "Longling" "Rongling") "lat" 24.5870 "lng" 98.6930)
+  (dict "aliases" (slice "가노야" "Kanoya" "가노야 시" "Kanoya City") "lat" 31.3783 "lng" 130.8520)
+  (dict "aliases" (slice "아시야" "Ashiya" "아시야 공군기지" "Ashiya Air Base") "lat" 33.8833 "lng" 130.6500)
+  (dict "aliases" (slice "도쿄" "Tokyo" "도쿄 미육군병원" "Tokyo U.S. Army Hospital" "극동사령부" "Far East Command" "FEC" "GHQ" "최고연합군사령부") "lat" 35.6762 "lng" 139.6503)
  -}}
 {{- $blocked := false -}}
 {{- range $alias := $invalidAliases -}}
