@@ -33,19 +33,19 @@ carousel:
     - src: /img/R1-013_1.jpg
       alt: 'RG1 - Korean War'
       caption: 'Prisoners, Camps, Refugees, Massacres, Everyday Life'
-      url: "en/items/r1-korean-war/"
+      url: "/en/items/r1-korean-war/"
     - src: /img/R2-Scanned000016.jpg
       alt: 'RG2 - DMZ & Panmunjom'
       caption:
-      url: "en/items/r2-dmz-panmunjom/"
+      url: "/en/items/r2-dmz-panmunjom/"
     - src: /img/comfortwomen-02.JPG
       alt: "R3 Japanese Military Comfort Women"
       caption: 'Discovery of evidence footage related to Japanese military comfort women'
-      url: "en/items/r3-comfort-women/"
+      url: "/en/items/r3-comfort-women/"
     - src: https://img.youtube.com/vi/22amrq9YZ-A/sddefault.jpg
       alt: 'R4 The Big Picture'
       caption: 'The Big Picture'
-      url: "en/items/r4-the-big-picture/"
+      url: "/en/items/r4-the-big-picture/"
 
 ##################### hero-right/left ########################
 ############# basic / image-right / image-left ###############
@@ -215,7 +215,7 @@ featuredNumbers:
   enable: true
   title: Institute for Peace and Worlding Studies Digital Archive
   subtitle: Items Publication Status
-  content: As of 2021, the archive provides the following items and related content. We are opening Korean War and DMZ-related video items collected by the Institute for Peace and Worlding Studies in 2021.
+  content: The archive currently provides 4 record groups, 10 sub-collections, and 875 video items. We are opening Korean War, DMZ/Panmunjom, Japanese Military "Comfort Women", and The Big Picture series.
   image: img/R2-Scanned000016.jpg
 
 ############################ two box ##########################

@@ -1,5 +1,38 @@
 # Work Log - facwa
 
+## 2026-10-27 about 페이지 통계/링크 수정 + repo 변경 선언 (woonjjang)
+
+- **작업일시**: 2026-10-27 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `layouts/partials/marketing/customs/feature-statistic.html` — 통계 업데이트: Items 875, Record Groups 4, Sub-collections 10, Video Items 875
+- `data/marketing.yml` — featuredNumbers 설명 텍스트 업데이트, two-box R2 URL 수정 (`/items/r2-dmz판문점/`)
+- `data/en/marketing.yml` — featuredNumbers 설명 업데이트, carousel URL 선행 `/` 누락 수정 (4건)
+- `README.md` — repo 변경 선언: `team-durumi/facwa` → `text-consulting-group/facwa`
+
+### 결과
+- Hugo 빌드 성공 (1,374 KO / 1,362 EN)
+
+---
+
+## 2026-10-27 venues 좌표 보강 + 맵 z-index 수정 (woonjjang)
+
+- **작업일시**: 2026-10-27 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `layouts/partials/facwa/venue-point.html` — 누락 지명 좌표 추가: 포항, 진주, 제주도, 원주, 아시야, 도쿄(GHQ/FEC), 영등포, 문산역, 선유리, 장단, 임진강, 개성 내봉장 등
+- 기존 별칭도 보강: 자유의 다리, 대성동, 법원읍, 금촌, 천현면 등
+- `assets/style.css` — 맵 `isolation: isolate` + `z-index: 0`으로 Leaflet 헤더 겹침 수정
+
+### 결과
+- Hugo 빌드 성공 (1,374 KO / 1,362 EN)
+- venues 맵 유효 좌표 73개 (기존 대비 증가)
+- commit `62f805a`, push 완료
+
+---
+
 ## 2026-10-27 subjects 페이지 썸네일 카드 + venues 맵 좌표 수정 (woonjjang)
 
 - **작업일시**: 2026-10-27 KST

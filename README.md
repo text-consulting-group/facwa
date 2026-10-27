@@ -1,5 +1,7 @@
 # facwa.kr
 
+> **Repo 변경**: `https://github.com/team-durumi/facwa` → **`https://github.com/text-consulting-group/facwa`**
+
 ## front
 - facwa.kr
 - (last)hugo v0.143.1+extended+withdeploy darwin/arm64 BuildDate=2025-02-04T08:57:38Z VendorInfo=brew
