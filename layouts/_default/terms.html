@@ -51,52 +51,92 @@
         </section>
       {{ end }}
 
-      <div class="facwa-pill-list facwa-pill-list--terms">
-        {{ $type := .Type }}
-        {{ range .Data.Terms.Alphabetical }}
-          {{ $name := .Name }}
-          {{ $count := .Count }}
-          {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-            <a class="facwa-pill facwa-pill--term" href="{{ .RelPermalink }}">
-              <span>{{ .Title }}</span>
-              <span class="facwa-pill__count">{{ printf (T "taxonomy_count_template") $count }}</span>
-            </a>
+      {{ if $isVenues }}
+        <div class="facwa-pill-list facwa-pill-list--terms">
+          {{ $type := .Type }}
+          {{ range .Data.Terms.Alphabetical }}
+            {{ $name := .Name }}
+            {{ $count := .Count }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+              <a class="facwa-pill facwa-pill--term" href="{{ .RelPermalink }}">
+                <span>{{ .Title }}</span>
+                <span class="facwa-pill__count">{{ printf (T "taxonomy_count_template") $count }}</span>
+              </a>
+            {{ end }}
           {{ end }}
-        {{ end }}
-      </div>
+        </div>
+      {{ else }}
+        <div class="facwa-term-card-grid">
+          {{ $type := .Type }}
+          {{ range .Data.Terms.Alphabetical }}
+            {{ $name := .Name }}
+            {{ $count := .Count }}
+            {{ $pages := .Pages }}
+            {{ $thumb := "" }}
+            {{ if gt (len $pages) 0 }}
+              {{ $randomPage := index $pages (mod (now.UnixNano) (len $pages)) }}
+              {{ $thumb = $randomPage.Params.thumbnail }}
+              {{ $components := $randomPage.Params.components | default $randomPage.Params.Components }}
+              {{ if and (not $components) $randomPage.Params.media }}
+                {{ with index $randomPage.Params.media "components" }}{{ $components = . }}{{ end }}
+                {{ with index $randomPage.Params.media "thumbnail" }}{{ $thumb = . }}{{ end }}
+              {{ end }}
+              {{ if and (not $thumb) $components }}
+                {{ $firstComponent := index $components 0 }}
+                {{ if reflect.IsMap $firstComponent }}
+                  {{ with index $firstComponent "src" }}{{ $thumb = . }}{{ end }}
+                {{ else }}
+                  {{ $thumb = $firstComponent }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+              <a class="facwa-term-card" href="{{ .RelPermalink }}">
+                <div class="facwa-term-card__media">
+                  {{ if $thumb }}
+                    <img src="{{ $thumb | absURL }}" alt="{{ .Title }}" loading="lazy">
+                  {{ else }}
+                    <div class="facwa-term-card__placeholder">{{ T "venues_item_placeholder" }}</div>
+                  {{ end }}
+                </div>
+                <div class="facwa-term-card__body">
+                  <h2 class="facwa-term-card__title">{{ .Title }}</h2>
+                  <span class="facwa-term-card__count">{{ printf (T "taxonomy_count_template") $count }}</span>
+                </div>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
   </section>
 {{ end }}
 {{ define "footerJs" }}
   {{ if eq .Data.Plural "venues" }}
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    >
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-      defer
-    ></script>
-    <script>
+    {{ partial "openfreemap-assets.html" . }}
+    <script type="module">
+      import * as L from "leaflet";
+      import { maplibreGL } from "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/dist/leaflet-maplibre-gl.mjs";
+
       (() => {
         const run = () => {
           const mapEl = document.getElementById("facwa-venues-map");
-          if (!mapEl || typeof L === "undefined") return;
+          if (!mapEl) return;
           const points = {{ .Scratch.Get "venuePoints" | jsonify | safeJS }};
           if (!Array.isArray(points) || !points.length) return;
 
           const map = L.map(mapEl, {
             scrollWheelZoom: false,
+            attributionControl: false,
           }).setView([36.35, 127.38], 6);
 
-          L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-            maxZoom: 19
+          maplibreGL({
+            style: "https://tiles.openfreemap.org/styles/positron",
+            attributionControl: false,
           }).addTo(map);
+          L.control.attribution({ prefix: false })
+            .addAttribution('© <a href="https://openfreemap.org/" title="OpenFreeMap">OFM</a> · <a href="https://openmaptiles.org/" title="OpenMapTiles">OMT</a> · <a href="https://www.openstreetmap.org/copyright" title="Data from OpenStreetMap">OSM</a>')
+            .addTo(map);
 
           const bounds = [];
           points.forEach((point) => {

@@ -1,5 +1,53 @@
 # Work Log - facwa
 
+## 2026-10-27 subjects 페이지 썸네일 카드 + venues 맵 좌표 수정 (woonjjang)
+
+- **작업일시**: 2026-10-27 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `layouts/_default/terms.html` — subjects 등 비-venues 택소노미에 랜덤 썸네일 카드 그리드 적용 (기존 pill → 카드)
+- `assets/style.css` — `facwa-term-card-grid`, `facwa-term-card` 스타일 추가
+- `layouts/partials/facwa/venue-point.html` — "공동경비구역", "JSA", "Joint Security Area" 별칭 추가 (파주 좌표)
+
+### 결과
+- Hugo 빌드 성공 (1,374 KO / 1,362 EN)
+- subjects 페이지: 9개 주제 카드에 랜덤 썸네일 표시 확인
+- venues/공동경비구역jsa/ 맵 좌표 매핑 해결
+
+---
+
+## 2026-10-27 venues 맵 OpenFreeMap 마이그레이션 + 렌더링 오류 수정 (woonjjang)
+
+- **작업일시**: 2026-10-27 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `layouts/partials/openfreemap-assets.html` 신규 생성 (homi 참조: OpenFreeMap + MapLibre GL ESM)
+- `layouts/_default/terms.html` — CartoDB 타일 → OpenFreeMap(positron) + MapLibre GL로 교체
+- `layouts/_default/taxonomy.html` — 동일하게 OpenFreeMap으로 교체
+- `layouts/partials/marketing/banner--ww--slide.html` — `$slides` nil 에러 수정 (`| default slice`)
+- `layouts/_default/taxonomy.html` — `.File.BaseFileName` nil 에러 수정 (`with .File` 래핑)
+
+### 결과
+- Hugo 빌드 성공 (1,374 KO / 1,362 EN), 에러 0건
+
+---
+
+## 2026-10-27 AGENTS.md에 work-log 필수 작성 규칙 추가 (woonjjang)
+
+- **작업일시**: 2026-10-27 KST
+- **작업자**: woonjjang
+
+### 변경 내용
+- `AGENTS.md`에 `## Rules` 섹션 추가
+- "모든 작업 후 반드시 work-log.md에 기록한다"는 규칙 명시
+
+### 결과
+- AGENTS.md 갱신 완료
+
+---
+
 ## 2026-07-09 영문 페이지 한글 잔재 수정 (woonjjang)
 
 - **작업일시**: 2026-07-09 14:50 KST

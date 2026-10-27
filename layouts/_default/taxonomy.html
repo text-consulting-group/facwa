@@ -83,7 +83,7 @@
                 {{ with .Params.description }}{{ . }}{{ else }}{{ T "items_empty_summary" }}{{ end }}
               </p>
               <div class="facwa-venue-card__footer">
-                <span>{{ with .Params.local_identifier }}{{ . }}{{ else }}{{ .File.BaseFileName }}{{ end }}</span>
+                <span>{{ with .Params.local_identifier }}{{ . }}{{ else }}{{ with .File }}{{ .BaseFileName }}{{ end }}{{ end }}</span>
                 <a href="{{ .RelPermalink }}">{{ T "venues_open_page" }}</a>
               </div>
             </div>
@@ -95,34 +95,30 @@
 {{ end }}
 {{ define "footerJs" }}
   {{ if and (eq .Data.Plural "venues") (.Scratch.Get "venueTermPoint") ((.Scratch.Get "venueTermPoint").valid) }}
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    >
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-      defer
-    ></script>
-    <script>
+    {{ partial "openfreemap-assets.html" . }}
+    <script type="module">
+      import * as L from "leaflet";
+      import { maplibreGL } from "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/dist/leaflet-maplibre-gl.mjs";
+
       (() => {
         const run = () => {
           const mapEl = document.getElementById("facwa-venue-term-map");
-          if (!mapEl || typeof L === "undefined") return;
+          if (!mapEl) return;
           const point = {{ .Scratch.Get "venueTermPoint" | jsonify | safeJS }};
           if (!point || !point.valid) return;
 
           const map = L.map(mapEl, {
             scrollWheelZoom: false,
+            attributionControl: false,
           }).setView([point.lat, point.lng], 7);
 
-          L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-            maxZoom: 19
+          maplibreGL({
+            style: "https://tiles.openfreemap.org/styles/positron",
+            attributionControl: false,
           }).addTo(map);
+          L.control.attribution({ prefix: false })
+            .addAttribution('© <a href="https://openfreemap.org/" title="OpenFreeMap">OFM</a> · <a href="https://openmaptiles.org/" title="OpenMapTiles">OMT</a> · <a href="https://www.openstreetmap.org/copyright" title="Data from OpenStreetMap">OSM</a>')
+            .addTo(map);
 
           L.circleMarker([point.lat, point.lng], {
             radius: Math.max(10, Math.min(20, 8 + point.count / 5)),
