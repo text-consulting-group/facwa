@@ -1,5 +1,15 @@
 # Work Log - facwa
 
+## 2026-11-02 18:30 KST — summary.md 발송 (Resend)
+
+- `summary.md`(기준일 10/28 — 이후 work-log 변경 없음)를 `woonjjang@ictact.kr`, `kangsh@skhu.ac.kr`, `suneulhae@gmail.com`에 Resend 발송 (제목 `facwa 진행요약 (2026-11-02)`, id `01a19b94`).
+
+
+## 2026-10-28 KST — summary.md 생성 (issue-summary-agents)
+
+- 사람이 지정해 `summary.md` 최초 생성 (work-log 기준 고객용 요약). `plans/issue-summary/issue-summary-agents.md` 관리 대상 표에 편입.
+- 고객 메일은 수동 발송 정책 — 발송하지 않음.
+
 ## 2026-10-27 about 페이지 통계/링크 수정 + repo 변경 선언 (woonjjang)
 
 - **작업일시**: 2026-10-27 KST
