@@ -190,3 +190,7 @@
 2026-07-05
 - robots.txt에 `Sitemap: https://facwa.kr/sitemap.xml` 참조를 추가했다.
 - Hugo production 빌드를 다시 통과시켰다.
+
+2026-11-03
+- 병합된 PR #2 확인: level__file 복원·shotlist 표기 통일 반영 확인. 잔여 "Shot List" 4건을 "Shot list"로 정정.
+- description_status 문형 통일(727건)·한글 잔재(858건)는 후속 작업으로 남아 이슈는 자동 종료하지 않음.
