@@ -190,3 +190,9 @@
 2026-07-05
 - robots.txt에 `Sitemap: https://facwa.kr/sitemap.xml` 참조를 추가했다.
 - Hugo production 빌드를 다시 통과시켰다.
+
+2026-11-04
+- 소유자 요청([facwa #1](https://github.com/text-consulting-group/facwa/issues/1) 코멘트 "summary.md 반영하고 close 해줘") 처리.
+- summary.md에 영문 자료 설명 균일화 완료 내역 반영: level__file 다중 줄 복원 866파일 · shotlist 표기 통일 67파일 · 한글 잔재 정리 858파일 · description_status 문형 통일 199파일 (PR #2 `99264bb` + 후속 배치 `1769a57`).
+- 잔여(편집 판단) 표기 유지: F3 지명 135줄 · F4 부대명 49줄 · 인명 6줄 · 자유 서술 675건 · sentinel 통일 정책 — 후속 배치 예정.
+- issue #1 close (완료 코멘트 포함).
