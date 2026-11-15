@@ -1,5 +1,24 @@
 # Work Log - facwa
 
+## 2026-11-15 15:19 KST — llms.txt 적용 검증 (issue #5, Issue Fighter Opposite Loop)
+
+- **작업일시**: 2026-11-15 15:19 KST
+- **작업자**: MiMo Code (fighter)
+- **대상**: GitHub issue [#5](https://github.com/text-consulting-group/facwa/issues/5) — llms.txt 적용 미완(2026-09-22 getCSV 빌드 오류 유보분)
+
+### 변경 내용
+- 코드 변경 없음(검증 전용). `static/llms.txt`는 2026-08-14 commit `79e29e2`로 이미 적용되어 있음을 확인.
+
+### 검증 결과
+- **llms.txt 생성·반영**: `static/llms.txt` (1,439 bytes) 존재, origin/main 반영, 실서버 https://facwa.kr/llms.txt 200 OK (text/plain), 본문 로컬 파일과 동일(바이트 대조 일치)
+- **빌드**: origin/main(`e47b703`) 상태에서 `npm run build` — Hugo v0.166.0, KO 1,374 / EN 1,362 페이지, 오류 0. 2026-09-22 유보 사유였던 getCSV 오류 미재현(getCSV는 2026-08-18 commit `c1132e1`에서 `resources.GetRemote`로 대체 완료)
+- **링크 검증**: llms.txt 내 9개 링크(/items, /creators, /subjects, /sources, /venues, /about, /research-guide, /posts, /inquiry) 전건 실서버 200 OK
+- **규약**: homi와 동일한 archivej 공통 규약(제목+태그라인, About, Main Sections, Languages, Contact, Technical Information) 준수
+
+### 결과
+- 완료 조건 2/2 충족 — issue #5 close
+- **별도 확인 필요(이슈 범위 외)**: `layouts/partials/seo/structured-data.html`이 baseof.html에 미참조 — JSON-LD 미렌더링(실서버 0건). issue 본문의 "json-ld 2026-07-07 적용 완료"와 상이, 별도 이슈 대상
+
 ## 2026-11-02 18:30 KST — summary.md 발송 (Resend)
 
 - `summary.md`(기준일 10/28 — 이후 work-log 변경 없음)를 `woonjjang@ictact.kr`, `kangsh@skhu.ac.kr`, `suneulhae@gmail.com`에 Resend 발송 (제목 `facwa 진행요약 (2026-11-02)`, id `01a19b94`).
