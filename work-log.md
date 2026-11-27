@@ -1,3 +1,10 @@
+## 2026-11-27 KST — 메인 레코드그룹 카드 모바일 가운데 정렬 (facwa #8)
+
+- `layouts/partials/marketing/customs/feature-rg.html` — 카드 래퍼 4개에 모바일 `w-full` 추가 (`p-4 lg:w-1/4 md:w-full` → `p-4 w-full lg:w-1/4`).
+- 원인: 모바일(<768px)에서 flex 아이템에 폭 미지정 → 내용 폭 축소·좌측 정렬. 헤더 텍스트(`text-center`)는 이미 정렬 정상.
+- 빌드 통과 (1,374 KO / 1,362 EN) · push 후 CF Pages 자동 배포 + 수동 배포로 실서버 확인: 카드 4개 `w-full` 반영.
+- **wrangler.jsonc `GITHUB_OWNER` 갱신**: `team-durumi` → `text-consulting-group` — 소유자 GitHub 연결 변경(team-durumi → text-consulting-group)에 맞춰 빌드 환경변수 정정. git 연결 자체는 이미 text-consulting-group/facwa로 정상(빌드 로그 clone URL 확인).
+
 ## 2026-11-27 KST — summary.md 업데이트 (facwa #7)
 
 - summary.md에 날짜(MM-DD) 표기 추가·최신순 정렬 — homi #27과 동일 규격.
