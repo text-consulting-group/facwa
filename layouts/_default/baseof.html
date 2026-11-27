@@ -12,6 +12,7 @@
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
     {{- template "_internal/schema.html" . -}}
+    {{- partial "seo/structured-data.html" . -}}
     {{- partial "google-fonts" .Site.Params -}}
     {{- block "headCss" . }}{{ end -}}
     {{ $styles := resources.Get "style.css" | css.PostCSS (dict "inlineImports" true) }}
