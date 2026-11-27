@@ -1,16 +1,17 @@
 # 평화월딩영상아카이브 — 진행 요약
 
-> 기준일: 2026-11-04 KST · 발송대상: woonjjang@ictact.kr, kangsh@skhu.ac.kr, suneulhae@gmail.com
+> 기준일: 2026-11-27 KST · 발송대상: woonjjang@ictact.kr, kangsh@skhu.ac.kr, suneulhae@gmail.com
 > 출처: `archivej/facwa/work-log.md`  
 > 사이트: https://facwa.kr  
 > 발송: **수동** (agent 자동 발송 없음)
 
 ## 한눈에 보기
 
-완료 6 · 진행 0 · 잔여 1
+완료 7 · 진행 0 · 잔여 1
 
 ## 평화월딩영상아카이브 (facwa.kr)
 
+- **완료**: 구글 검색엔진(Google Search Console)에 사이트 등록·검증을 마치고 검색어 확인 설정을 추가했습니다 — 검색 노출 점검이 자동으로 진행됩니다 (11-27)
 - **완료**: 소개 페이지 안내 문구·자료 규모 표시 정리 (자료 **875건** · 대주제 4개 · 세부 10개)
 - **완료**: 장소 탐색 지도 보강 — 주요 장소 표시 좌표를 넓혀 더 많은 장소가 지도에 뜨도록 개선
 - **완료**: 주제 목록 화면을 썸네일 카드로 개선
