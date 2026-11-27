@@ -1,3 +1,9 @@
+## 2026-11-27 KST — summary.md 문구 정리 + JSON-LD 완료 전환 (facwa #9)
+
+- 잔여 항목에서 내부 용어(F3/F4/`description_status`/sentinel) 제거 — 고객용 표현으로 교체.
+- JSON-LD 항목을 예정 → 완료(11-27) 전환 — facwa #6 실서버 ld+json 4건(WebSite·Organization·SiteNavigationElement·BreadcrumbList) 확인.
+- 집계 갱신: 완료 8 · 진행 0 · 잔여 1.
+
 ## 2026-11-27 KST — 메인 레코드그룹 카드 + 협력기관 블록 모바일 가운데 정렬 (facwa #8)
 
 - `layouts/partials/marketing/customs/feature-rg.html` — 카드 래퍼 4개에 모바일 `w-full` 추가 (`p-4 lg:w-1/4 md:w-full` → `p-4 w-full lg:w-1/4`).
