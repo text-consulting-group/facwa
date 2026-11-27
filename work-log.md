@@ -1,3 +1,10 @@
+## 2026-11-27 KST — summary.md 업데이트 (facwa #7)
+
+- summary.md에 날짜(MM-DD) 표기 추가·최신순 정렬 — homi #27과 동일 규격.
+- GSC 항목에 SEO 키워드 21개 등록 사실 반영.
+- 지도 항목에 OpenFreeMap 교체 반영(고객용 표현: "지도 엔진 교체").
+- 검색엔진 구조화 데이터(JSON-LD, facwa #6 approved)를 예정 항목으로 추가.
+
 ## 2026-11-27 KST — Google Search Console 연동·SEO 키워드 등록 (archivej #40)
 
 - GSC 사이트 등록·sitemap 제출·검증 완료(tcgc.uk 계열은 도메인 검증 커버).
