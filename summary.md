@@ -3,7 +3,7 @@
 > 기준일: 2026-11-27 KST · 발송대상: woonjjang@ictact.kr, kangsh@skhu.ac.kr, suneulhae@gmail.com
 > 출처: `archivej/facwa/work-log.md`  
 > 사이트: https://facwa.kr  
-> 발송: **수동** (agent 자동 발송 없음)
+> 발송: **고객 발송 완료 (2026-11-27)** — Resend (`summary@textconsulting.io`) · JSON-LD·문구 정리 갱신분 포함
 
 
 ## TCG-LETTER

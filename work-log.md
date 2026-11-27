@@ -1,3 +1,8 @@
+## 2026-11-27 KST — summary.md 고객 발송 (facwa #9)
+
+- Resend(`summary@textconsulting.io`)로 발송 완료 — 수신: woonjjang@ictact.kr, kangsh@skhu.ac.kr, suneulhae@gmail.com (id `01a21ca0`).
+- 발송본 포함 내용: JSON-LD 완료 전환·잔여 항목 문구 정리·GSC 키워드 21개·모바일 정렬.
+
 ## 2026-11-27 KST — summary.md 문구 정리 + JSON-LD 완료 전환 (facwa #9)
 
 - 잔여 항목에서 내부 용어(F3/F4/`description_status`/sentinel) 제거 — 고객용 표현으로 교체.
