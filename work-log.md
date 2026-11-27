@@ -1,3 +1,10 @@
+## 2026-11-27 KST — Google Search Console 연동·SEO 키워드 등록 (archivej #40)
+
+- GSC 사이트 등록·sitemap 제출·검증 완료(tcgc.uk 계열은 도메인 검증 커버).
+- 소유권 검증 메타 태그 반영 + API 검증 완료.
+- SEO 대상 키워드 config 등록: 한국전쟁·DMZ·판문점·일본군 '위안부'·빅 픽처(국영문) + 평화월딩연구소·성공회대학교 + 거제포로수용소·흥남·피난민·유엔군의 퇴각 등 21개
+- 키워드 노출 데이터는 `plans/gsc/gsc_tool.py sync` 보고서로 정기 집계. 상세: archivej #40.
+
 # Work Log - facwa
 
 ## 2026-11-02 18:30 KST — summary.md 발송 (Resend)
